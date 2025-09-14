@@ -18,7 +18,7 @@ const Hero = () => {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2.5rem;
-            align-items: center;
+            align-items: stretch;
           }
           
           .hero-v1__prebadge {
@@ -62,12 +62,12 @@ const Hero = () => {
           
           .hero-v1__media {
             position: relative;
-            aspect-ratio: 4 / 3;
             border-radius: 16px;
             overflow: hidden;
             background: linear-gradient(180deg, var(--lm-card-from), var(--lm-card-to));
             border: 1px dashed var(--lm-deco-border);
-            min-height: 260px;
+            height: 100%;
+            min-height: 400px;
           }
           
           @media (max-width: 960px) {
