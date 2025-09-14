@@ -192,6 +192,15 @@ const Header = () => {
                    priority
                    style={{ height: 'auto' }}
                  />
+                 <div style={{
+                   marginTop: '2px',
+                   fontSize: '11px',
+                   letterSpacing: '.06em',
+                   textTransform: 'uppercase',
+                   color: 'color-mix(in srgb, var(--lm-text) 80%, transparent)'
+                 }}>
+                   Производство мебели<br />на заказ
+                 </div>
                </Link>
              </div>
              

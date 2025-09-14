@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
     const footerStyles = {
@@ -135,10 +136,15 @@ const Footer = () => {
                         {/* Колонка 1: Бренд */}
                         <div className="footer-brand">
                             <div className="footer-logo" style={logoStyles}>
-                                <span style={dotStyles} aria-hidden="true"></span>
+                                <Image
+                                    src="/images/logo/logo.png"
+                                    alt="Ле-манш"
+                                    width={120}
+                                    height={40}
+                                    style={{ height: 'auto' }}
+                                />
                                 <div>
-                                    <div style={brandNameStyles}>Ле-манш</div>
-                                    <div style={brandSubStyles}>Кухни на заказ · Производство</div>
+                                    <div style={brandSubStyles}>Производство мебели<br />на заказ</div>
                                 </div>
                             </div>
                             <p style={descStyles}>
