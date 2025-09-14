@@ -157,7 +157,7 @@ const Footer = () => {
                         <div className="footer-contacts" style={{maxWidth: '220px', justifySelf: 'end', paddingRight: '0', marginRight: '0'}}>
                             <h4 style={titleStyles}>Контакты</h4>
                             <ul style={listStyles}>
-                                <li style={{...listItemStyles, wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto', marginRight: '0'}}>Телефон: <a href="tel:+7XXXXXXXXXX" className="link" style={linkStyles}>+7 (XXX) XXX-XX-XX</a></li>
+                                <li style={{...listItemStyles, wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto', marginRight: '0'}}>Телефон: <a href="tel:+79518380735" className="link" style={linkStyles}>+7 951 838 0735</a></li>
                                 <li style={{...listItemStyles, wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto', marginRight: '0'}}>Email: <a href="mailto:email@example.com" className="link" style={linkStyles}>email@example.com</a></li>
                                 <li style={{...listItemStyles, wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto', marginRight: '0'}}>Адрес: ул. Щербакова, 130, Ростов-на-Дону</li>
                             </ul>

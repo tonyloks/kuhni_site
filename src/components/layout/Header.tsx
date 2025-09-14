@@ -202,7 +202,7 @@ const Header = () => {
              {/* Контакты и CTA */}
              <div className="header-contacts" style={headerContactsStyles}>
                <div className="header-phone" style={headerPhoneStyles}>
-                 <a href="tel:+78632999999" style={phoneStyles}>+7 (XXX) XXX-XX-XX</a>
+                 <a href="tel:+79518380735" style={phoneStyles}>+7 951 838 0735</a>
                </div>
                <div className="header-cta" style={headerCtaStyles}>
                  <button className="btn-secondary" style={btnSecondaryStyles}>Заказать звонок</button>
