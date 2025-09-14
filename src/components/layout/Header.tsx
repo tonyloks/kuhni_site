@@ -21,9 +21,6 @@ const Header = () => {
     alignItems: 'center',
     justifyContent: 'space-between',
     borderBottom: '1px solid var(--lm-border)',
-    maxWidth: '1280px',
-    margin: '0 auto',
-    padding: '0 16px',
   };
 
   const brandStyles = {
@@ -152,6 +149,7 @@ const Header = () => {
         `
       }} />
       <header style={headerStyles}>
+        <div className="layout-container">
           <div style={headerRowStyles}>
             <Link href="/" style={brandStyles}>
               <div style={dotStyles}></div>
@@ -191,6 +189,7 @@ const Header = () => {
               </div>
             </div>
           )}
+        </div>
       </header>
     </>
   );

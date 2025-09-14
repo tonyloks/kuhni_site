@@ -8,9 +8,9 @@ const Hero = () => {
       <style dangerouslySetInnerHTML={{
         __html: `
           .hero-v1 {
+            padding: 80px 16px;
             max-width: 1280px;
             margin: 0 auto;
-            padding: 80px 16px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2.5rem;
@@ -71,7 +71,7 @@ const Hero = () => {
             .hero-v1 {
               grid-template-columns: 1fr;
               gap: 2rem;
-              padding: 56px 16px;
+              padding: 56px 12px;
             }
             
             .hero-v1__media {
@@ -81,7 +81,7 @@ const Hero = () => {
           
           @media (max-width: 768px) {
             .hero-v1 {
-              padding: 56px 12px;
+              padding: 56px 8px;
             }
           }
           
@@ -97,33 +97,33 @@ const Hero = () => {
         `
       }} />
       <section className="hero-v1">
-      <div className="hero-v1__left">
-        <div className="hero-v1__prebadge">
-          <span className="badge-dot"></span>
-          <span>Современные и классические кухни</span>
+        <div className="hero-v1__left">
+            <div className="hero-v1__prebadge">
+              <span className="badge-dot"></span>
+              <span>Современные и классические кухни</span>
+            </div>
+            <h1 className="hero-v1__title">
+              Кухни на заказ в Москве и области от 2 недель
+            </h1>
+            <p className="hero-v1__subtitle">
+              Создаем уникальные кухонные гарнитуры, которые идеально вписываются в ваш интерьер и соответствуют вашему образу жизни. Бесплатный замер и 3D-проект.
+            </p>
+            <div className="hero-v1__actions">
+              <a href="#" className="btn-primary">
+                Рассчитать стоимость кухни
+              </a>
+              <a href="#" className="btn-secondary">
+                Вызвать замерщика
+              </a>
+            </div>
+            <div className="hero-v1__chips">
+              <div className="chip">Гарантия 5 лет</div>
+              <div className="chip">Собственное производство</div>
+              <div className="chip">Более 3000 проектов</div>
+            </div>
         </div>
-        <h1 className="hero-v1__title">
-          Кухни на заказ в Москве и области от 2 недель
-        </h1>
-        <p className="hero-v1__subtitle">
-          Создаем уникальные кухонные гарнитуры, которые идеально вписываются в ваш интерьер и соответствуют вашему образу жизни. Бесплатный замер и 3D-проект.
-        </p>
-        <div className="hero-v1__actions">
-          <a href="#" className="btn-primary">
-            Рассчитать стоимость кухни
-          </a>
-          <a href="#" className="btn-secondary">
-            Вызвать замерщика
-          </a>
-        </div>
-        <div className="hero-v1__chips">
-          <div className="chip">Гарантия 5 лет</div>
-          <div className="chip">Собственное производство</div>
-          <div className="chip">Более 3000 проектов</div>
-        </div>
-      </div>
-      <div className="hero-v1__media card"></div>
-    </section>
+        <div className="hero-v1__media card"></div>
+      </section>
     </>
   );
 };

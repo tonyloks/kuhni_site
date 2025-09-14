@@ -14,9 +14,7 @@ const Footer = () => {
          display: 'grid',
          gridTemplateColumns: '1fr 1fr 1fr',
          gap: '32px',
-         padding: '40px 16px',
-         maxWidth: '1280px',
-         margin: '0 auto',
+         padding: '40px 0',
      };
 
     const logoStyles = {
@@ -84,11 +82,9 @@ const Footer = () => {
          alignItems: 'center',
          justifyContent: 'space-between',
          gap: '16px',
-         padding: '16px 16px 20px',
+         padding: '20px 0',
          fontSize: '14px',
          color: 'color-mix(in srgb, var(--lm-text) 85%, transparent)',
-         maxWidth: '1280px',
-         margin: '0 auto',
      };
 
     const legalLinksStyles = {
@@ -134,7 +130,8 @@ const Footer = () => {
                 `
             }} />
             <footer style={footerStyles}>
-                <div className="grid" style={gridStyles}>
+                <div className="layout-container">
+                    <div className="grid" style={gridStyles}>
                         {/* Колонка 1: Бренд */}
                         <div>
                             <div style={logoStyles}>
@@ -169,14 +166,17 @@ const Footer = () => {
                                 <li style={listItemStyles}>Адрес: Ростов-на-Дону, [улица, дом]</li>
                             </ul>
                         </div>
+                    </div>
                 </div>
 
                 {/* Нижняя полоса (legal) */}
-                <div className="legal" style={legalStyles}>
+                <div className="layout-container">
+                    <div className="legal" style={legalStyles}>
                     <span>© 1999—2025 «Ле-манш»</span>
                     <div style={legalLinksStyles}>
                         <Link href="#" className="legal-link" style={legalLinkStyles}>Политика конфиденциальности</Link>
                         <Link href="#" className="legal-link" style={legalLinkStyles}>Пользовательское соглашение</Link>
+                    </div>
                     </div>
                 </div>
             </footer>

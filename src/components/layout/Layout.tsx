@@ -54,9 +54,7 @@ const Layout = ({ children }: LayoutProps) => {
       <div style={layoutStyles}>
         <Header />
         <main style={mainStyles}>
-          <div className="layout-container">
-            {children}
-          </div>
+          {children}
         </main>
         <Footer />
       </div>
