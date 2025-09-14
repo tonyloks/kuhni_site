@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Logo from '../Logo';
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -184,23 +185,7 @@ const Header = () => {
             {/* Логотип */}
              <div className="header-logo" style={headerLogoStyles}>
                <Link href="/" style={brandStyles}>
-                 <Image
-                   src="/images/logo/logo.png"
-                   alt="Ле-манш"
-                   width={120}
-                   height={40}
-                   priority
-                   style={{ height: 'auto' }}
-                 />
-                 <div style={{
-                   marginTop: '2px',
-                   fontSize: '11px',
-                   letterSpacing: '.06em',
-                   textTransform: 'uppercase',
-                   color: 'color-mix(in srgb, var(--lm-text) 80%, transparent)'
-                 }}>
-                   Производство мебели<br />на заказ
-                 </div>
+                 <Logo width={120} height={30} />
                </Link>
              </div>
              

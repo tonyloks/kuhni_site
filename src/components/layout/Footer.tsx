@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import Logo from '../Logo';
 
 const Footer = () => {
     const footerStyles = {
@@ -135,20 +136,9 @@ const Footer = () => {
                     <div className="grid footer-grid" style={gridStyles}>
                         {/* Колонка 1: Бренд */}
                         <div className="footer-brand">
-                            <div className="footer-logo" style={logoStyles}>
-                                <Image
-                                    src="/images/logo/logo.png"
-                                    alt="Ле-манш"
-                                    width={120}
-                                    height={40}
-                                    style={{ height: 'auto' }}
-                                />
-                                <div>
-                                    <div style={brandSubStyles}>Производство мебели<br />на заказ</div>
-                                </div>
-                            </div>
+                            <Logo width={90} height={30} />
                             <p style={descStyles}>
-                                Кухни на заказ в Ростове-на-Дону. Производство, дизайн, монтаж.
+                                Кухни на заказ в Ростове-на-Дону.<br />Производство, дизайн, монтаж.
                             </p>
                         </div>
 
@@ -169,7 +159,7 @@ const Footer = () => {
                             <ul style={listStyles}>
                                 <li style={{...listItemStyles, wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto', marginRight: '0'}}>Телефон: <a href="tel:+7XXXXXXXXXX" className="link" style={linkStyles}>+7 (XXX) XXX-XX-XX</a></li>
                                 <li style={{...listItemStyles, wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto', marginRight: '0'}}>Email: <a href="mailto:email@example.com" className="link" style={linkStyles}>email@example.com</a></li>
-                                <li style={{...listItemStyles, wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto', marginRight: '0'}}>Адрес: г. Ростов-на-Дону, [улица, номер дома]</li>
+                                <li style={{...listItemStyles, wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto', marginRight: '0'}}>Адрес: ул. Щербакова, 130, Ростов-на-Дону</li>
                             </ul>
                         </div>
                     </div>
