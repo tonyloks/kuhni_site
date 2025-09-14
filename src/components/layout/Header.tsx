@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -59,6 +60,35 @@ const Header = () => {
     display: 'flex',
     alignItems: 'center',
     gap: '12px'
+  };
+
+  // Стили для новых контейнеров
+  const headerLogoStyles = {
+    display: 'flex',
+    alignItems: 'center'
+  };
+
+  const headerNavigationStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    flex: '1',
+    justifyContent: 'center'
+  };
+
+  const headerContactsStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '12px'
+  };
+
+  const headerPhoneStyles = {
+    display: 'flex',
+    alignItems: 'center'
+  };
+
+  const headerCtaStyles = {
+    display: 'flex',
+    alignItems: 'center'
   };
 
   const phoneStyles = {
@@ -151,22 +181,39 @@ const Header = () => {
       <header style={headerStyles}>
         <div className="layout-container">
           <div style={headerRowStyles}>
-            <Link href="/" style={brandStyles}>
-              <div style={dotStyles}></div>
-              Ле-манш
-            </Link>
-            
-            <nav className="nav" style={navStyles}>
-              <Link href="/catalog" className="link" style={linkStyles}>Каталог</Link>
-              <Link href="/portfolio" className="link" style={linkStyles}>Наши работы</Link>
-              <Link href="/reviews" className="link" style={linkStyles}>Отзывы</Link>
-              <Link href="/contacts" className="link" style={linkStyles}>Контакты</Link>
-            </nav>
-            
-            <div className="cta" style={ctaStyles}>
-              <a href="tel:+78632999999" style={phoneStyles}>+7 (XXX) XXX-XX-XX</a>
-              <button className="btn-secondary" style={btnSecondaryStyles}>Заказать звонок</button>
-            </div>
+            {/* Логотип */}
+             <div className="header-logo" style={headerLogoStyles}>
+               <Link href="/" style={brandStyles}>
+                 <Image
+                   src="/images/logo/logo.png"
+                   alt="Ле-манш"
+                   width={120}
+                   height={40}
+                   priority
+                   style={{ height: 'auto' }}
+                 />
+               </Link>
+             </div>
+             
+             {/* Навигация */}
+             <div className="header-navigation" style={headerNavigationStyles}>
+               <nav className="nav" style={navStyles}>
+                 <Link href="/catalog" className="link" style={linkStyles}>Каталог</Link>
+                 <Link href="/portfolio" className="link" style={linkStyles}>Наши работы</Link>
+                 <Link href="/reviews" className="link" style={linkStyles}>Отзывы</Link>
+                 <Link href="/contacts" className="link" style={linkStyles}>Контакты</Link>
+               </nav>
+             </div>
+             
+             {/* Контакты и CTA */}
+             <div className="header-contacts" style={headerContactsStyles}>
+               <div className="header-phone" style={headerPhoneStyles}>
+                 <a href="tel:+78632999999" style={phoneStyles}>+7 (XXX) XXX-XX-XX</a>
+               </div>
+               <div className="header-cta" style={headerCtaStyles}>
+                 <button className="btn-secondary" style={btnSecondaryStyles}>Заказать звонок</button>
+               </div>
+             </div>
             
             <button 
               className="burger" 
