@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Убираем подчеркивание у всех ссылок по умолчанию */
+a {
+  text-decoration: none;
+}
+
 /* ===== Le Mans — Crimson · White (Вариант 2) ===== */
 /* Базовые переменные темы */
 :root {

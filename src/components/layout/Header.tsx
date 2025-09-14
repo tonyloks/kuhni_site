@@ -51,6 +51,7 @@ const Header = () => {
     padding: '0 16px',
     fontSize: '15px',
     color: 'var(--lm-text)',
+    textDecoration: 'none',
     transition: 'background-color .2s ease, color .2s ease'
   };
 
