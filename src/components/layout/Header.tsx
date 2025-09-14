@@ -185,7 +185,7 @@ const Header = () => {
             {/* Логотип */}
              <div className="header-logo" style={headerLogoStyles}>
                <Link href="/" style={brandStyles}>
-                 <Logo width={120} height={30} />
+                 <Logo width={90} height={30} />
                </Link>
              </div>
              
