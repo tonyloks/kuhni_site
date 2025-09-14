@@ -15,12 +15,15 @@ const Header = () => {
     backdropFilter: 'blur(6px)'
   };
 
-  const rowStyles = {
+  const headerRowStyles = {
     height: '64px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    borderBottom: '1px solid var(--lm-border)'
+    borderBottom: '1px solid var(--lm-border)',
+    maxWidth: '1280px',
+    margin: '0 auto',
+    padding: '0 16px',
   };
 
   const brandStyles = {
@@ -101,7 +104,9 @@ const Header = () => {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     gap: '8px',
-    padding: '12px 16px'
+    padding: '12px 16px',
+    maxWidth: '1280px',
+    margin: '0 auto',
   };
 
   const mobileLinkStyles = {
@@ -147,39 +152,45 @@ const Header = () => {
         `
       }} />
       <header style={headerStyles}>
-        <div className="container">
-          <div style={rowStyles}>
+          <div style={headerRowStyles}>
             <Link href="/" style={brandStyles}>
-              <span className="text-2xl font-bold">Ле-манш</span>
               <div style={dotStyles}></div>
+              Ле-манш
             </Link>
+            
             <nav className="nav" style={navStyles}>
               <Link href="/catalog" className="link" style={linkStyles}>Каталог</Link>
               <Link href="/portfolio" className="link" style={linkStyles}>Наши работы</Link>
               <Link href="/reviews" className="link" style={linkStyles}>Отзывы</Link>
               <Link href="/contacts" className="link" style={linkStyles}>Контакты</Link>
             </nav>
+            
             <div className="cta" style={ctaStyles}>
-              <a href="tel:+79999999999" style={phoneStyles}>+7 (XXX) XXX-XX-XX</a>
+              <a href="tel:+78632999999" style={phoneStyles}>+7 (863) 299-99-99</a>
               <button className="btn-secondary" style={btnSecondaryStyles}>Заказать звонок</button>
             </div>
-            <button className="burger" style={burgerStyles} onClick={toggleMobileMenu}>
+            
+            <button 
+              className="burger" 
+              style={burgerStyles}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
               <div style={burgerLineStyles}></div>
               <div style={burgerLineStyles}></div>
               <div style={burgerLineStyles}></div>
             </button>
           </div>
-        </div>
-        <div style={mobileStyles}>
-          <div className="container">
-            <div style={mobileLinksStyles}>
-              <Link href="/catalog" className="mobile-link" style={mobileLinkStyles}>Каталог</Link>
-              <Link href="/portfolio" className="mobile-link" style={mobileLinkStyles}>Наши работы</Link>
-              <Link href="/reviews" className="mobile-link" style={mobileLinkStyles}>Отзывы</Link>
-              <Link href="/contacts" className="mobile-link" style={mobileLinkStyles}>Контакты</Link>
+          
+          {isMobileMenuOpen && (
+            <div style={mobileStyles}>
+              <div style={mobileLinksStyles}>
+                <Link href="/catalog" className="mobile-link" style={mobileLinkStyles}>Каталог</Link>
+                <Link href="/portfolio" className="mobile-link" style={mobileLinkStyles}>Наши работы</Link>
+                <Link href="/reviews" className="mobile-link" style={mobileLinkStyles}>Отзывы</Link>
+                <Link href="/contacts" className="mobile-link" style={mobileLinkStyles}>Контакты</Link>
+              </div>
             </div>
-          </div>
-        </div>
+          )}
       </header>
     </>
   );
