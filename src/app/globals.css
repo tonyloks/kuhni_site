@@ -416,74 +416,114 @@ a.link:hover {
    .header-underline__mobile{ display:block; } 
  } 
  
- /* ===== Footer — Bar With Logo (для Варианта 4) ===== */
-.footer-bar{
+ /* ===== Footer Standard ===== */
+/* База */
+.footer-std{
   background: rgba(255,255,255,.70);
   backdrop-filter: blur(6px);
   border-top: 1px solid var(--lm-border);
+  color: var(--lm-text);
 }
-
-.footer-bar__row{
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.footer-bar__brand{
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--lm-heading);
-}
-.footer-bar__dot{
-  width: 10px; height: 10px;
-  border-radius: 999px;
-  background: var(--lm-accent-dot);
-}
-
-.footer-bar__nav{
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-.footer-bar__link{
-   font-size: 15px;
-   text-decoration: none;
-   color: var(--lm-text);
-   transition: color .2s ease;
- }
-.footer-bar__link:hover{ color: var(--lm-heading); }
-
-.footer-bar__phone{
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--lm-heading);
-  text-decoration: none;
-}
-
-/* Контейнер (если нет собственного) */
 .container{
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
-/* Адаптив — на узких экранах складываем навигацию вниз */
+/* Сетка 3 колонки */
+.footer-std__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  padding: 40px 0;
+}
+
+/* Бренд */
+.footer-std__logo{
+  display:flex; align-items:center; gap:8px;
+  color: var(--lm-heading);
+}
+.footer-std__dot{
+  width:10px; height:10px; border-radius:999px; background: var(--lm-accent-dot);
+}
+.footer-std__brand-name{
+  font-family: "DM Serif Display", ui-serif, Georgia, serif;
+  color: var(--lm-heading);
+  font-size: 20px;
+  line-height: 1.1;
+}
+.footer-std__brand-sub{
+  margin-top: 2px;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--lm-text) 80%, transparent);
+}
+.footer-std__desc{
+  margin-top: 12px;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--lm-text) 90%, transparent);
+}
+
+/* Заголовки колонок */
+.footer-std__title{
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  color: var(--lm-heading);
+  font-size: 16px;
+  font-family: var(--font-source-sans-3), sans-serif;
+}
+
+/* Списки */
+.footer-std__list{
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.footer-std__list li{ margin: 8px 0; }
+.footer-std__list a{
+  color: var(--lm-text);
+  text-decoration: none;
+  transition: color .2s ease, background-color .2s ease;
+}
+.footer-std__list a:hover{
+  color: var(--lm-heading);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Нижняя полоса (legal) */
+.footer-std__legal{
+  border-top: 1px solid var(--lm-border);
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 16px;
+  padding: 16px 0 20px;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--lm-text) 85%, transparent);
+}
+.footer-std__legal-links{
+  display:flex; gap: 16px; flex-wrap: wrap;
+}
+.footer-std__legal-links a{
+  color: var(--lm-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.footer-std__legal-links a:hover{ color: var(--lm-heading); }
+
+/* Адаптив */
+@media (max-width: 960px){
+  .footer-std__grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @media (max-width: 640px){
-  .footer-bar__row{
-    height: auto;
-    padding: 12px 0;
-    gap: 12px;
+  .footer-std__grid{
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 0;
+  }
+  .footer-std__legal{
     flex-direction: column;
-    align-items: stretch;
-  }
-  .footer-bar__nav{
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px 20px;
-  }
-  .footer-bar__phone{
-    text-align: center;
+    align-items: flex-start;
   }
 }
