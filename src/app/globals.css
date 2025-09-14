@@ -1,0 +1,489 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Le Mans — Crimson · White (Вариант 2) ===== */
+/* Базовые переменные темы */
+:root {
+  /* Фон страницы, секций, карточек */
+  --lm-bg: #FFFFFF; /* общий фон */
+  --lm-card-from: #FFFFFF; /* верх градиента карточки/плейсхолдера */
+  --lm-card-to: #FFF5F5; /* низ градиента карточки/плейсхолдера */
+  /* Текст */
+  --lm-text: #4B5563; /* основной текст параграфов */
+  --lm-heading: #111827; /* заголовки (DM Serif Display) */
+  /* Рамки/разделители */
+  --lm-border: #E5E7EB; /* базовые бордеры/разделители */
+  --lm-deco-border: #EDE9E9; /* декоративные тонкие рамки/аксценты */
+  /* Чипы/бейджи */
+  --lm-chip-bg: #FFFFFF; /* фон чипа/бейджа */
+  --lm-chip-text: #4B5563; /* текст в чипе/бейдже */
+  /* Акценты/точки/иконки-метки */
+  --lm-accent-dot: #EF4444; /* маленькие акцентные точки/иконки */
+  /* Кнопка Primary (CTA) */
+  --lm-primary-bg: #B91C1C; /* фон главной кнопки */
+  --lm-primary-text: #FFFFFF; /* текст/иконка на главной кнопке */
+  /* Кнопка Secondary (обводка) */
+  --lm-secondary-bg: #FFFFFF; /* фон вторичной кнопки */
+  --lm-secondary-text: #111827; /* текст вторичной кнопки */
+  --lm-secondary-brd: #E5E7EB; /* рамка вторичной кнопки */
+  /* Состояния/эффекты (мягкие, без точных тонов — через прозрачность) */
+  --lm-hover-overlay: rgba(0, 0, 0, .04); /* наведение на светлом фоне */
+  --lm-press-overlay: rgba(0, 0, 0, .08); /* нажатие на светлом фоне */
+  --lm-focus-ring: rgba(239, 68, 68, .35); /* фокус-кольцо (red-500, 35%) */
+}
+
+/* ===== Базовая типографика и фон страницы ===== */
+body {
+  background: var(--lm-bg); /* общий фон сайта */
+  color: var(--lm-text); /* основной текст */
+  font-family: var(--font-source-sans-3), sans-serif;
+}
+
+/* Заголовки (DM Serif Display) */
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+  font-family: var(--font-dm-serif-display), serif;
+  color: var(--lm-heading); /* цвет заголовков */
+  letter-spacing: -0.01em;
+}
+
+/* ===== Контейнеры/карточки/плейсхолдеры изображений ===== */
+.card {
+  background: linear-gradient(180deg, var(--lm-card-from) 0%, var(--lm-card-to) 100%); /* фон карточки */
+  border: 1px solid var(--lm-border); /* рамка карточки */
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+/* Декоративные «плашки» вокруг карточек */
+.card-deco {
+  background: var(--lm-chip-bg);
+  border: 1px solid var(--lm-deco-border); /* более тонкая декоративная рамка */
+  border-radius: 16px;
+}
+
+/* ===== Чипы/бейджи преимуществ ===== */
+.chip {
+  background: var(--lm-chip-bg); /* фон чипа */
+  color: var(--lm-chip-text); /* текст в чипе */
+  border: 1px solid var(--lm-border); /* контур чипа */
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* Маленькая акцентная точка (иконка-метка) */
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--lm-accent-dot); /* акцентная красная точка */
+}
+
+/* ===== Кнопки ===== */
+/* Главная (Primary) — CTA: «Рассчитать стоимость кухни» */
+.btn-primary {
+  background: var(--lm-primary-bg); /* красный фон CTA */
+  color: var(--lm-primary-text); /* белый текст/иконки */
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  transition: filter .2s ease, transform .02s ease, box-shadow .2s ease;
+}
+
+.btn-primary:hover {
+  filter: brightness(0.95);
+} /* лёгкое затемнение при hover */
+.btn-primary:active {
+  transform: translateY(1px);
+  filter: brightness(0.92);
+}
+
+.btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--lm-focus-ring); /* мягкое красное фокус-кольцо */
+}
+
+/* Вторичная (Secondary) — «Вызвать замерщика» */
+.btn-secondary {
+  background: var(--lm-secondary-bg); /* белый фон */
+  color: var(--lm-secondary-text); /* тёмный текст */
+  border: 1px solid var(--lm-secondary-brd); /* светлая рамка */
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  transition: background-color .2s ease, transform .02s ease, box-shadow .2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--lm-hover-overlay);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--lm-focus-ring);
+}
+
+/* ===== Навигация/хедер/футер ===== */
+.header {
+  background: rgba(255, 255, 255, .8); /* прозрачный белый в липком хедере */
+  border-bottom: 1px solid var(--lm-border); /* разделитель внизу */
+  backdrop-filter: saturate(180%) blur(6px);
+}
+
+.header a {
+  color: var(--lm-text); /* ссылки в навигации */
+}
+
+.header a:hover {
+  color: var(--lm-heading);
+} /* при наведении темнее */
+.footer {
+  background: rgba(255, 255, 255, .6); /* лёгкая прозрачность */
+  border-top: 1px solid var(--lm-border); /* разделитель сверху */
+  color: var(--lm-text); /* текст в футере */
+}
+
+/* ===== Разделители/бордеры в списках и блоках ===== */
+.divider {
+  border-color: var(--lm-border);
+}
+
+/* ===== Ссылки в тексте (контентные) ===== */
+a.link {
+  color: var(--lm-heading); /* более тёмный для читаемости */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a.link:hover {
+  background-color: var(--lm-hover-overlay);
+}
+
+/* ===== Поля ввода/формы ===== */
+.input, .textarea, .select {
+  background: #FFFFFF;
+  color: var(--lm-text);
+  border: 1px solid var(--lm-border); /* контур инпутов */
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+
+.input:focus-visible,
+.textarea:focus-visible,
+.select:focus-visible {
+  outline: none;
+  border-color: var(--lm-accent-dot); /* лёгкий акцент на фокусе */
+  box-shadow: 0 0 0 4px var(--lm-focus-ring);
+}
+
+/* ===== Малые утилиты ===== */
+.bg-page {
+  background: var(--lm-bg);
+}
+
+.text-body {
+  color: var(--lm-text);
+}
+
+.text-head {
+  color: var(--lm-heading);
+}
+
+.br-default {
+  border-color: var(--lm-border);
+}
+
+/* =========================
+   Hero V1 — Classic Split
+   (Crimson · White, DM Serif Display + Source Sans 3)
+   ========================= */
+/* Контейнер героя */
+.hero-v1 {
+  max-width: 80rem; /* ~1280px */
+  margin-inline: auto;
+  padding: 5rem 1.25rem; /* 80px 20px */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem; /* 40px */
+  align-items: center;
+  background: var(--lm-bg);
+  color: var(--lm-text);
+}
+
+/* Левая колонка (текст) */
+.hero-v1__left {
+}
+
+/* Пребейдж над заголовком */
+.hero-v1__prebadge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+/* Заголовок */
+.hero-v1__title {
+  font-family: "DM Serif Display", ui-serif, Georgia, serif;
+  color: var(--lm-heading);
+  letter-spacing: -0.01em;
+  font-size: clamp(2rem, 2.5vw + 1rem, 3rem); /* 32–48px */
+  line-height: 1.15;
+  margin: 0 0 1.25rem; /* 0 0 20px */
+}
+
+/* Подзаголовок */
+.hero-v1__subtitle {
+  font-family: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.6;
+  margin: 0 0 2rem; /* 32px */
+  color: var(--lm-text);
+  max-width: 40rem; /* ~640px */
+}
+
+/* Блок CTA-кнопок */
+.hero-v1__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem; /* 12px */
+}
+
+/* Список преимуществ (чипы) */
+.hero-v1__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem; /* 12px */
+  margin-top: 2rem; /* 32px */
+  font-size: .875rem; /* 14px */
+}
+
+/* Правая колонка (изображение/плейсхолдер) */
+.hero-v1__media {
+  /* Использует базовый стиль .img-ph из твоих настроек */
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--lm-card-from), var(--lm-card-to));
+  border: 1px dashed var(--lm-deco-border);
+  min-height: 260px; /* чтобы не схлопывалось на очень узких экранах */
+}
+
+/* Разделитель под экраном (необязательно) */
+.hero-v1__divider {
+  border: 0;
+  border-top: 1px solid var(--lm-border);
+  margin: 0;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 960px) {
+  .hero-v1 {
+    grid-template-columns: 1fr;
+    gap: 2rem; /* 32px */
+    padding: 3.5rem 1rem; /* 56px 16px */
+  }
+
+  .hero-v1__media {
+    order: -1; /* Картинку наверх на мобильных (по желанию) */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-v1__title {
+    font-size: clamp(1.875rem, 5vw + 1rem, 2.375rem); /* 30–38px */
+  }
+
+  .hero-v1__subtitle {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+/* ===== Header — Underline Nav (Variant 4) ===== */ 
+ .header-underline{ 
+   background: rgba(255,255,255,.85); 
+   backdrop-filter: blur(6px); 
+ } 
+ 
+ .header-underline__row{ 
+   height: 64px; 
+   display: flex; align-items: center; justify-content: space-between; 
+   border-bottom: 1px solid var(--lm-border); 
+ } 
+ 
+ .header-underline__brand{ 
+   display:flex; align-items:center; gap:8px; 
+   color: var(--lm-heading); 
+ } 
+ .header-underline__dot{ 
+   width:10px; height:10px; border-radius:999px; background: var(--lm-accent-dot); 
+ } 
+ 
+ .header-underline__nav{ 
+   display:flex; align-items:stretch; gap:4px; 
+ } 
+ 
+ .header-underline__link{ 
+   position: relative; 
+   height: 64px; 
+   display:flex; align-items:center; 
+   padding: 0 16px; 
+   font-size: 15px; 
+   color: var(--lm-text); 
+   transition: background-color .2s ease, color .2s ease; 
+ } 
+ .header-underline__link:hover{ 
+   background: var(--lm-hover-overlay); 
+   color: var(--lm-heading); 
+ } 
+ .header-underline__link::after{ 
+   content:""; 
+   position:absolute; left:0; right:0; bottom:0; 
+   height:2px; background: transparent; 
+   transition: background-color .2s ease, transform .2s ease; 
+   transform: scaleX(0); 
+   transform-origin: center; 
+ } 
+ .header-underline__link.is-active{ 
+   color: var(--lm-heading); font-weight: 600; 
+ } 
+ .header-underline__link.is-active::after{ 
+   background: var(--lm-accent-dot); 
+   transform: scaleX(1); 
+ } 
+ 
+ .header-underline__cta{ 
+   display:flex; align-items:center; gap:12px; 
+ } 
+ .header-underline__phone{ 
+   color: var(--lm-heading); font-weight: 600; text-decoration: none; 
+ } 
+ .header-underline__btn-secondary{ 
+   background: var(--lm-secondary-bg); 
+   color: var(--lm-secondary-text); 
+   border: 1px solid var(--lm-secondary-brd); 
+   border-radius: 12px; 
+   padding: 10px 16px; 
+   font-weight: 600; 
+   transition: background-color .2s ease, transform .02s ease, box-shadow .2s ease; 
+ } 
+ .header-underline__btn-secondary:hover{ background: var(--lm-hover-overlay); } 
+ .header-underline__btn-secondary:active{ transform: translateY(1px); } 
+ .header-underline__btn-secondary:focus-visible{ 
+   outline: none; box-shadow: 0 0 0 4px var(--lm-focus-ring); 
+ } 
+ 
+ /* Бургер для мобилки */ 
+ .header-underline__burger{ 
+   display:none; 
+   padding:8px; 
+   border:1px solid var(--lm-border); 
+   border-radius: 10px; 
+   background:#fff; 
+ } 
+ .header-underline__burger-line{ 
+   width:20px; height:2px; background: var(--lm-heading); margin:4px 0; 
+ } 
+ 
+ /* Мобильное меню (дропдаун) */ 
+ .header-underline__mobile{ 
+   display:none; 
+   border-bottom:1px solid var(--lm-border); 
+   background:#fff; 
+ } 
+ .header-underline__mobile-links{ 
+   display:grid; grid-template-columns:1fr 1fr; gap:8px; 
+   padding: 12px 16px; 
+ } 
+ .header-underline__mobile-link{ 
+   padding:10px 12px; border-radius:10px; text-decoration:none; 
+   color: var(--lm-text); 
+ } 
+ .header-underline__mobile-link:hover{ background: var(--lm-hover-overlay); color: var(--lm-heading); } 
+ 
+ /* Адаптив */ 
+ @media (max-width: 960px){ 
+   .header-underline__nav, 
+   .header-underline__cta{ display:none; } 
+   .header-underline__burger{ display:inline-flex; flex-direction:column; align-items:center; justify-content:center; } 
+   .header-underline__mobile{ display:block; } 
+ } 
+ 
+ /* ===== Footer — Bar With Logo (для Варианта 4) ===== */
+.footer-bar{
+  background: rgba(255,255,255,.70);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid var(--lm-border);
+}
+
+.footer-bar__row{
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-bar__brand{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--lm-heading);
+}
+.footer-bar__dot{
+  width: 10px; height: 10px;
+  border-radius: 999px;
+  background: var(--lm-accent-dot);
+}
+
+.footer-bar__nav{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.footer-bar__link{
+   font-size: 15px;
+   text-decoration: none;
+   color: var(--lm-text);
+   transition: color .2s ease;
+ }
+.footer-bar__link:hover{ color: var(--lm-heading); }
+
+.footer-bar__phone{
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--lm-heading);
+  text-decoration: none;
+}
+
+/* Контейнер (если нет собственного) */
+.container{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Адаптив — на узких экранах складываем навигацию вниз */
+@media (max-width: 640px){
+  .footer-bar__row{
+    height: auto;
+    padding: 12px 0;
+    gap: 12px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .footer-bar__nav{
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+  .footer-bar__phone{
+    text-align: center;
+  }
+}

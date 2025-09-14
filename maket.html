@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<website company="Ле-манш">
+
+    <!-- ОБЩИЕ НАСТРОЙКИ САЙТА -->
+    <settings>
+        <typography>
+            <font type="headings">DM Serif Display</font>
+            <font type="body">Source Sans 3</font>
+        </typography>
+        <styles>
+            <![CDATA[
+                /* ===== Le Mans — Crimson · White (Вариант 2) ===== */
+                /* Базовые переменные темы */
+                :root{
+                  /* Фон страницы, секций, карточек */
+                  --lm-bg:            #FFFFFF;   /* общий фон */
+                  --lm-card-from:     #FFFFFF;   /* верх градиента карточки/плейсхолдера */
+                  --lm-card-to:       #FFF5F5;   /* низ градиента карточки/плейсхолдера */
+
+                  /* Текст */
+                  --lm-text:          #4B5563;   /* основной текст параграфов */
+                  --lm-heading:       #111827;   /* заголовки (DM Serif Display) */
+
+                  /* Рамки/разделители */
+                  --lm-border:        #E5E7EB;   /* базовые бордеры/разделители */
+                  --lm-deco-border:   #EDE9E9;   /* декоративные тонкие рамки/аксценты */
+
+                  /* Чипы/бейджи */
+                  --lm-chip-bg:       #FFFFFF;   /* фон чипа/бейджа */
+                  --lm-chip-text:     #4B5563;   /* текст в чипе/бейдже */
+
+                  /* Акценты/точки/иконки-метки */
+                  --lm-accent-dot:    #EF4444;   /* маленькие акцентные точки/иконки */
+
+                  /* Кнопка Primary (CTA) */
+                  --lm-primary-bg:    #B91C1C;   /* фон главной кнопки */
+                  --lm-primary-text:  #FFFFFF;   /* текст/иконка на главной кнопке */
+
+                  /* Кнопка Secondary (обводка) */
+                  --lm-secondary-bg:  #FFFFFF;   /* фон вторичной кнопки */
+                  --lm-secondary-text:#111827;   /* текст вторичной кнопки */
+                  --lm-secondary-brd: #E5E7EB;   /* рамка вторичной кнопки */
+
+                  /* Состояния/эффекты (мягкие, без точных тонов — через прозрачность) */
+                  --lm-hover-overlay: rgba(0,0,0,.04);   /* наведение на светлом фоне */
+                  --lm-press-overlay: rgba(0,0,0,.08);   /* нажатие на светлом фоне */
+                  --lm-focus-ring:    rgba(239, 68, 68, .35); /* фокус-кольцо (red-500, 35%) */
+                }
+
+                /* ===== Базовая типографика и фон страницы ===== */
+                body{
+                  background: var(--lm-bg);            /* общий фон сайта */
+                  color: var(--lm-text);               /* основной текст */
+                }
+
+                /* Заголовки (DM Serif Display) */
+                .h1,.h2,.h3,.h4,.h5{
+                  color: var(--lm-heading);            /* цвет заголовков */
+                  letter-spacing: -0.01em;
+                }
+
+                /* ===== Контейнеры/карточки/плейсхолдеры изображений ===== */
+                .card{
+                  background: linear-gradient(180deg, var(--lm-card-from) 0%, var(--lm-card-to) 100%); /* фон карточки */
+                  border: 1px solid var(--lm-border);  /* рамка карточки */
+                  border-radius: 16px;
+                  box-shadow: 0 1px 2px rgba(16,24,40,0.04);
+                }
+
+                /* Декоративные «плашки» вокруг карточек */
+                .card-deco{
+                  background: var(--lm-chip-bg);
+                  border: 1px solid var(--lm-deco-border); /* более тонкая декоративная рамка */
+                  border-radius: 16px;
+                }
+
+                /* ===== Чипы/бейджи преимуществ ===== */
+                .chip{
+                  background: var(--lm-chip-bg);       /* фон чипа */
+                  color: var(--lm-chip-text);          /* текст в чипе */
+                  border: 1px solid var(--lm-border);  /* контур чипа */
+                  border-radius: 999px;
+                  padding: 6px 12px;
+                  font-size: 12px;
+                }
+
+                /* Маленькая акцентная точка (иконка-метка) */
+                .badge-dot{
+                  width: 6px; height: 6px;
+                  border-radius: 999px;
+                  background: var(--lm-accent-dot);    /* акцентная красная точка */
+                }
+
+                /* ===== Кнопки ===== */
+
+                /* Главная (Primary) — CTA: «Рассчитать стоимость кухни» */
+                .btn-primary{
+                  background: var(--lm-primary-bg);    /* красный фон CTA */
+                  color: var(--lm-primary-text);       /* белый текст/иконки */
+                  border: 1px solid transparent;
+                  border-radius: 12px;
+                  padding: 12px 20px;
+                  font-weight: 600;
+                  transition: filter .2s ease, transform .02s ease, box-shadow .2s ease;
+                }
+                .btn-primary:hover{ filter: brightness(0.95); } /* лёгкое затемнение при hover */
+                .btn-primary:active{ transform: translateY(1px); filter: brightness(0.92); }
+                .btn-primary:focus-visible{
+                  outline: none;
+                  box-shadow: 0 0 0 4px var(--lm-focus-ring);   /* мягкое красное фокус-кольцо */
+                }
+
+                /* Вторичная (Secondary) — «Вызвать замерщика» */
+                .btn-secondary{
+                  background: var(--lm-secondary-bg);  /* белый фон */
+                  color: var(--lm-secondary-text);     /* тёмный текст */
+                  border: 1px solid var(--lm-secondary-brd); /* светлая рамка */
+                  border-radius: 12px;
+                  padding: 12px 20px;
+                  font-weight: 600;
+                  transition: background-color .2s ease, transform .02s ease, box-shadow .2s ease;
+                }
+                .btn-secondary:hover{ background-color: var(--lm-hover-overlay); }
+                .btn-secondary:active{ transform: translateY(1px); }
+                .btn-secondary:focus-visible{
+                  outline: none;
+                  box-shadow: 0 0 0 4px var(--lm-focus-ring);
+                }
+
+                /* ===== Навигация/хедер/футер ===== */
+                .header{
+                  background: rgba(255,255,255,.8);     /* прозрачный белый в липком хедере */
+                  border-bottom: 1px solid var(--lm-border); /* разделитель внизу */
+                  backdrop-filter: saturate(180%) blur(6px);
+                }
+                .header a{
+                  color: var(--lm-text);                 /* ссылки в навигации */
+                }
+                .header a:hover{ color: var(--lm-heading); } /* при наведении темнее */
+
+                .footer{
+                  background: rgba(255,255,255,.6);      /* лёгкая прозрачность */
+                  border-top: 1px solid var(--lm-border);/* разделитель сверху */
+                  color: var(--lm-text);                 /* текст в футере */
+                }
+
+                /* ===== Разделители/бордеры в списках и блоках ===== */
+                .divider{ border-color: var(--lm-border); }
+
+                /* ===== Ссылки в тексте (контентные) ===== */
+                a.link{
+                  color: var(--lm-heading);              /* более тёмный для читаемости */
+                  text-decoration: underline;
+                  text-underline-offset: 2px;
+                }
+                a.link:hover{
+                  background-color: var(--lm-hover-overlay);
+                }
+
+                /* ===== Поля ввода/формы ===== */
+                .input, .textarea, .select{
+                  background: #FFFFFF;
+                  color: var(--lm-text);
+                  border: 1px solid var(--lm-border);    /* контур инпутов */
+                  border-radius: 12px;
+                  padding: 12px 14px;
+                  transition: box-shadow .2s ease, border-color .2s ease;
+                }
+                .input:focus-visible,
+                .textarea:focus-visible,
+                .select:focus-visible{
+                  outline: none;
+                  border-color: var(--lm-accent-dot);    /* лёгкий акцент на фокусе */
+                  box-shadow: 0 0 0 4px var(--lm-focus-ring);
+                }
+
+                /* ===== Малые утилиты ===== */
+                .bg-page    { background: var(--lm-bg); }
+                .text-body  { color: var(--lm-text); }
+                .text-head  { color: var(--lm-heading); }
+                .br-default { border-color: var(--lm-border); }
+            ]]>
+        </styles>
+    </settings>
+
+    <!-- ОБЩИЕ ЭЛЕМЕНТЫ ДЛЯ ВСЕХ СТРАНИЦ -->
+    <shared-components>
+        <header>
+            <logo>
+                <text>Ле-манш</text>
+            </logo>
+            <navigation>
+                <item url="/catalog">Каталог</item>
+                <item url="/portfolio">Наши работы</item>
+                <item url="/reviews">Отзывы</item>
+                <item url="/contacts">Контакты</item>
+            </navigation>
+            <contacts>
+                <phone>+7 (XXX) XXX-XX-XX</phone>
+                <button>Заказать звонок</button>
+            </contacts>
+        </header>
+
+        <footer>
+            <logo>
+                <text>Ле-манш</text>
+            </logo>
+            <navigation>
+                <item url="/catalog">Каталог</item>
+                <item url="/portfolio">Наши работы</item>
+                <item url="/reviews">Отзывы</item>
+                <item url="/contacts">Контакты</item>
+            </navigation>
+            <contacts>
+                <phone>+7 (XXX) XXX-XX-XX</phone>
+                <email>email@example.com</email>
+                <address>г. Ростов-на-Дону, [улица, номер дома]</address>
+            </contacts>
+        </footer>
+    </shared-components>
+    
+    <!-- СТРАНИЦА: Главная -->
+    <page id="main" title="Главная">
+        
+        <!-- HEADER (используется общий компонент) -->
+        
+        <!-- ЭКРАН: Первый экран -->
+        <screen id="first-screen">
+            <content>
+                <main-offer>
+                    <title>Кухни на заказ в Ростове-на-Дону от производителя</title>
+                    <subtitle>Создаём корпусную мебель и кухни по индивидуальным размерам уже 26 лет. Любые нестандартные решения для вашего уюта.</subtitle>
+                    <actions>
+                        <button type="primary">Рассчитать стоимость кухни</button>
+                        <button type="secondary">Вызвать замерщика</button>
+                    </actions>
+                </main-offer>
+                
+                <advantages>
+                    <item id="experience">
+                        <title>26 лет на рынке</title>
+                        <description>Собственное производство и опытная команда.</description>
+                    </item>
+                    <item id="customization">
+                        <title>Любые нестандарты</title>
+                        <description>Реализуем проекты любой сложности по вашим размерам.</description>
+                    </item>
+                    <item id="materials">
+                        <title>Широкий выбор</title>
+                        <description>Большой ассортимент материалов и фурнитуры.</description>
+                    </item>
+                </advantages>
+            </content>
+        </screen>
+        
+        <!-- ЭКРАН: Наши работы (второй блок) -->
+        <screen id="portfolio-preview">
+            <title>Наши работы</title>
+            <projects>
+                <project id="project-1">
+                    <main-image>/images/project1-main.jpg</main-image>
+                    <title>Угловая кухня в скандинавском стиле</title>
+                    <price>140 000 ₽</price>
+                    <hover-text>Ознакомиться с проектом</hover-text>
+                    <popup-content>
+                        <gallery>
+                            <image description="Общий вид кухни">/images/project1-photo1.jpg</image>
+                            <image description="Рабочая зона">/images/project1-photo2.jpg</image>
+                            <image description="Фурнитура и ящики">/images/project1-photo3.jpg</image>
+                        </gallery>
+                        <details>
+                            <item name="Материал фасадов">МДФ, эмаль</item>
+                            <item name="Столешница">Пластиковая</item>
+                            <item name="Фурнитура">Hettich</item>
+                            <item name="Размеры">3200x1800 мм</item>
+                            <item name="Стоимость">140 000 ₽</item>
+                            <item name="Срок изготовления">4 недели</item>
+                        </details>
+                    </popup-content>
+                </project>
+                <project id="project-2">
+                    <main-image>/images/project2-main.jpg</main-image>
+                    <title>Прямая кухня в стиле лофт</title>
+                    <price>85 000 ₽</price>
+                    <hover-text>Ознакомиться с проектом</hover-text>
+                    <popup-content>
+                        <gallery>
+                            <image description="Общий вид кухни">/images/project2-photo1.jpg</image>
+                            <image description="Детали фасадов">/images/project2-photo2.jpg</image>
+                        </gallery>
+                        <details>
+                            <item name="Материал фасадов">ЛДСП Egger</item>
+                            <item name="Столешница">Пластик</item>
+                            <item name="Фурнитура">Boyard</item>
+                            <item name="Размеры">3000 мм</item>
+                            <item name="Стоимость">85 000 ₽</item>
+                            <item name="Срок изготовления">3 недели</item>
+                        </details>
+                    </popup-content>
+                </project>
+                <project id="project-3">
+                    <main-image>/images/project3-main.jpg</main-image>
+                    <title>Кухня с островом из массива</title>
+                    <price>350 000 ₽</price>
+                    <hover-text>Ознакомиться с проектом</hover-text>
+                    <popup-content>
+                        <gallery>
+                            <image description="Общий вид кухни с островом">/images/project3-photo1.jpg</image>
+                            <image description="Крупный план острова">/images/project3-photo2.jpg</image>
+                            <image description="Фасады из массива">/images/project3-photo3.jpg</image>
+                            <image description="Системы хранения">/images/project3-photo4.jpg</image>
+                        </gallery>
+                        <details>
+                            <item name="Материал фасадов">Массив ясеня</item>
+                            <item name="Столешница">Искусственный камень</item>
+                            <item name="Фурнитура">Blum</item>
+                            <item name="Размеры">4500x2200 мм + остров 1200x800 мм</item>
+                            <item name="Стоимость">350 000 ₽</item>
+                            <item name="Срок изготовления">7 недель</item>
+                        </details>
+                    </popup-content>
+                </project>
+            </projects>
+            <actions>
+                <button type="secondary" url="/portfolio">Перейти в портфолио</button>
+            </actions>
+        </screen>
+        
+        <!-- ЭКРАН: Квиз-калькулятор (третий блок) -->
+        <screen id="quiz-calculator">
+            <title>Рассчитайте стоимость вашей будущей кухни</title>
+            <subtitle>Ответьте на 4 простых вопроса, и мы сориентируем вас по цене</subtitle>
+            
+            <quiz>
+                <step id="shape" number="1">
+                    <question>Какая форма кухни вам подходит?</question>
+                    <options>
+                        <option>
+                            <image>/images/quiz/shape-straight.jpg</image>
+                            <text>Прямая</text>
+                        </option>
+                        <option>
+                            <image>/images/quiz/shape-corner.jpg</image>
+                            <text>Угловая</text>
+                        </option>
+                        <option>
+                            <image>/images/quiz/shape-u.jpg</image>
+                            <text>П-образная</text>
+                        </option>
+                        <option>
+                            <image>/images/quiz/shape-island.jpg</image>
+                            <text>С островом</text>
+                        </option>
+                    </options>
+                </step>
+                
+                <step id="size" number="2">
+                    <question>Укажите примерные размеры кухни</question>
+                    <options>
+                        <option>
+                            <image>/images/quiz/size-small.jpg</image>
+                            <text>До 3 метров</text>
+                        </option>
+                        <option>
+                            <image>/images/quiz/size-medium.jpg</image>
+                            <text>От 3 до 5 метров</text>
+                        </option>
+                        <option>
+                            <image>/images/quiz/size-large.jpg</image>
+                            <text>Более 5 метров</text>
+                        </option>
+                    </options>
+                </step>
+                
+                <step id="facade" number="3">
+                    <question>Какой материал фасадов предпочитаете?</question>
+                    <options>
+                        <option>
+                            <image>/images/quiz/facade-ldsp.jpg</image>
+                            <text>ЛДСП</text>
+                        </option>
+                        <option>
+                            <image>/images/quiz/facade-mdf.jpg</image>
+                            <text>МДФ (плёнка/эмаль)</text>
+                        </option>
+                        <option>
+                            <image>/images/quiz/facade-plastic.jpg</image>
+                            <text>Пластик / Акрил</text>
+                        </option>
+                        <option>
+                            <image>/images/quiz/facade-solid.jpg</image>
+                            <text>Массив / Шпон</text>
+                        </option>
+                    </options>
+                </step>
+                
+                <step id="countertop" number="4">
+                    <question>Какую столешницу выберем?</question>
+                    <options>
+                        <option>
+                            <image>/images/quiz/countertop-plastic.jpg</image>
+                            <text>Пластиковая (HPL)</text>
+                        </option>
+                        <option>
+                            <image>/images/quiz/countertop-stone.jpg</image>
+                            <text>Искусственный камень</text>
+                        </option>
+                    </options>
+                </step>
+                
+                <result>
+                    <title>Предварительный расчёт готов!</title>
+                    <estimated-price>
+                        <label>Ориентировочная стоимость вашей кухни:</label>
+                        <value>120 000 - 145 000 ₽</value>
+                    </estimated-price>
+                    <disclaimer>Онлайн-калькулятор даёт ориентировочную цену и не является публичной офертой. Итоговая стоимость зависит от конкретного состава, материалов, фурнитуры и точных размеров после замера.</disclaimer>
+                    
+                    <contact-form>
+                        <form-title>Оставьте контакты для точного расчёта</form-title>
+                        <form-subtitle>Наш дизайнер свяжется с вами, ответит на все вопросы и подготовит бесплатный 3D-проект.</form-subtitle>
+                        <input type="text" placeholder="Ваше имя" name="name"/>
+                        <input type="tel" placeholder="Ваш телефон" name="phone"/>
+                        <button type="submit">Получить точный расчёт и 3D-проект</button>
+                    </contact-form>
+                </result>
+            </quiz>
+            
+        </screen>
+
+        <!-- FOOTER (используется общий компонент) -->
+        
+    </page>
+    
+    <!-- СТРАНИЦА: Контакты -->
+    <page id="contacts" title="Контакты">
+
+        <!-- HEADER (используется общий компонент) -->
+
+        <content>
+            <title>Свяжитесь с нами</title>
+            <contact-info>
+                <block id="address">
+                    <label>Адрес салона:</label>
+                    <value>г. Ростов-на-Дону, [улица, номер дома]</value>
+                </block>
+                <block id="phone">
+                    <label>Телефон:</label>
+                    <value>+7 (XXX) XXX-XX-XX</value>
+                </block>
+                <block id="messengers">
+                    <label>Напишите нам в мессенджеры:</label>
+                    <value>Telegram, WhatsApp</value>
+                </block>
+                 <block id="email">
+                    <label>Электронная почта:</label>
+                    <value>email@example.com</value>
+                </block>
+                <block id="schedule">
+                    <label>График работы:</label>
+                    <value>Ежедневно, с 10:00 до 19:00</value>
+                </block>
+            </contact-info>
+            
+            <map>
+                <yandex-maps-placeholder>Интерактивная Яндекс.Карта с отметкой нашего салона</yandex-maps-placeholder>
+            </map>
+
+            <feedback-form>
+                <title>Остались вопросы? Напишите нам</title>
+                <input type="text" placeholder="Ваше имя" name="name"/>
+                <input type="tel" placeholder="Ваш телефон" name="phone"/>
+                <textarea placeholder="Ваш вопрос или сообщение" name="message"></textarea>
+                <button type="submit">Отправить сообщение</button>
+            </feedback-form>
+        </content>
+        
+        <!-- FOOTER (используется общий компонент) -->
+        
+    </page>
+    
+</website>
