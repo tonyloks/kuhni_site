@@ -131,10 +131,10 @@ const Footer = () => {
             }} />
             <footer style={footerStyles}>
                 <div className="layout-container">
-                    <div className="grid" style={gridStyles}>
+                    <div className="grid footer-grid" style={gridStyles}>
                         {/* Колонка 1: Бренд */}
-                        <div>
-                            <div style={logoStyles}>
+                        <div className="footer-brand">
+                            <div className="footer-logo" style={logoStyles}>
                                 <span style={dotStyles} aria-hidden="true"></span>
                                 <div>
                                     <div style={brandNameStyles}>Ле-манш</div>
@@ -147,7 +147,7 @@ const Footer = () => {
                         </div>
 
                         {/* Колонка 2: Навигация */}
-                        <nav aria-label="Footer">
+                        <nav className="footer-navigation" aria-label="Footer" style={{justifySelf: 'center'}}>
                             <h4 style={titleStyles}>Навигация</h4>
                             <ul style={listStyles}>
                                 <li style={listItemStyles}><Link href="/catalog" className="link" style={linkStyles}>Каталог</Link></li>
@@ -158,12 +158,12 @@ const Footer = () => {
                         </nav>
 
                         {/* Колонка 3: Контакты */}
-                        <div>
+                        <div className="footer-contacts" style={{maxWidth: '220px', justifySelf: 'end', paddingRight: '0', marginRight: '0'}}>
                             <h4 style={titleStyles}>Контакты</h4>
                             <ul style={listStyles}>
-                                <li style={listItemStyles}>Телефон: <a href="tel:+7XXXXXXXXXX" className="link" style={linkStyles}>+7 (XXX) XXX-XX-XX</a></li>
-                                <li style={listItemStyles}>Email: <a href="mailto:email@example.com" className="link" style={linkStyles}>email@example.com</a></li>
-                                <li style={listItemStyles}>Адрес: г. Ростов-на-Дону, [улица, номер дома]</li>
+                                <li style={{...listItemStyles, wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto', marginRight: '0'}}>Телефон: <a href="tel:+7XXXXXXXXXX" className="link" style={linkStyles}>+7 (XXX) XXX-XX-XX</a></li>
+                                <li style={{...listItemStyles, wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto', marginRight: '0'}}>Email: <a href="mailto:email@example.com" className="link" style={linkStyles}>email@example.com</a></li>
+                                <li style={{...listItemStyles, wordWrap: 'break-word', overflowWrap: 'break-word', hyphens: 'auto', marginRight: '0'}}>Адрес: г. Ростов-на-Дону, [улица, номер дома]</li>
                             </ul>
                         </div>
                     </div>
