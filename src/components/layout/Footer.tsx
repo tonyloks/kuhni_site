@@ -163,7 +163,7 @@ const Footer = () => {
                             <ul style={listStyles}>
                                 <li style={listItemStyles}>Телефон: <a href="tel:+7XXXXXXXXXX" className="link" style={linkStyles}>+7 (XXX) XXX-XX-XX</a></li>
                                 <li style={listItemStyles}>Email: <a href="mailto:email@example.com" className="link" style={linkStyles}>email@example.com</a></li>
-                                <li style={listItemStyles}>Адрес: Ростов-на-Дону, [улица, дом]</li>
+                                <li style={listItemStyles}>Адрес: г. Ростов-на-Дону, [улица, номер дома]</li>
                             </ul>
                         </div>
                     </div>

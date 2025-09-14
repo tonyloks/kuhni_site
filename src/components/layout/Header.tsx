@@ -103,7 +103,6 @@ const Header = () => {
     gridTemplateColumns: '1fr 1fr',
     gap: '8px',
     padding: '12px 16px',
-    maxWidth: '1280px',
     margin: '0 auto',
   };
 
@@ -165,7 +164,7 @@ const Header = () => {
             </nav>
             
             <div className="cta" style={ctaStyles}>
-              <a href="tel:+78632999999" style={phoneStyles}>+7 (863) 299-99-99</a>
+              <a href="tel:+78632999999" style={phoneStyles}>+7 (XXX) XXX-XX-XX</a>
               <button className="btn-secondary" style={btnSecondaryStyles}>Заказать звонок</button>
             </div>
             

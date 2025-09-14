@@ -9,15 +9,16 @@ const Hero = () => {
       <style dangerouslySetInnerHTML={{
         __html: `
           .hero-v1 {
-            padding: 80px 16px;
-            max-width: 1280px;
-            margin: 0 auto;
+            padding: 80px 0;
+            background: var(--lm-bg);
+            color: var(--lm-text);
+          }
+          
+          .hero-v1__content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2.5rem;
             align-items: center;
-            background: var(--lm-bg);
-            color: var(--lm-text);
           }
           
           .hero-v1__prebadge {
@@ -99,16 +100,18 @@ const Hero = () => {
         `
       }} />
       <section className="hero-v1">
-        <div className="hero-v1__left">
+        <div className="layout-container">
+          <div className="hero-v1__content">
+            <div className="hero-v1__left">
             <div className="hero-v1__prebadge">
               <span className="badge-dot"></span>
               <span>Современные и классические кухни</span>
             </div>
             <h1 className="hero-v1__title">
-              Кухни на заказ в Москве и области от 2 недель
+              Кухни на заказ в Ростове-на-Дону от производителя
             </h1>
             <p className="hero-v1__subtitle">
-              Создаем уникальные кухонные гарнитуры, которые идеально вписываются в ваш интерьер и соответствуют вашему образу жизни. Бесплатный замер и 3D-проект.
+              Создаём корпусную мебель и кухни по индивидуальным размерам уже 26 лет. Любые нестандартные решения для вашего уюта.
             </p>
             <div className="hero-v1__actions">
               <a href="#" className="btn-primary">
@@ -119,9 +122,9 @@ const Hero = () => {
               </a>
             </div>
             <div className="hero-v1__chips">
-              <div className="chip">Гарантия 5 лет</div>
-              <div className="chip">Собственное производство</div>
-              <div className="chip">Более 3000 проектов</div>
+              <div className="chip">26 лет на рынке</div>
+              <div className="chip">Любые нестандарты</div>
+              <div className="chip">Широкий выбор</div>
             </div>
         </div>
         <div className="hero-v1__media card">
@@ -132,6 +135,8 @@ const Hero = () => {
             style={{ objectFit: 'cover' }}
             priority
           />
+            </div>
+          </div>
         </div>
       </section>
     </>

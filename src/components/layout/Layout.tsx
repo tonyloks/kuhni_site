@@ -15,7 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
   };
 
   const containerStyles = {
-    maxWidth: '1280px',
+    maxWidth: '1120px',
     margin: '0 auto',
     padding: '0 16px',
     width: '100%',
@@ -32,7 +32,7 @@ const Layout = ({ children }: LayoutProps) => {
       <style dangerouslySetInnerHTML={{
         __html: `
           .layout-container {
-            max-width: 1280px;
+            max-width: 1120px;
             margin: 0 auto;
             padding: 0 16px;
             width: 100%;
