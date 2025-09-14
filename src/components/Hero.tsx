@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -59,6 +60,7 @@ const Hero = () => {
           }
           
           .hero-v1__media {
+            position: relative;
             aspect-ratio: 4 / 3;
             border-radius: 16px;
             overflow: hidden;
@@ -122,7 +124,15 @@ const Hero = () => {
               <div className="chip">Более 3000 проектов</div>
             </div>
         </div>
-        <div className="hero-v1__media card"></div>
+        <div className="hero-v1__media card">
+          <Image
+            src="/images/hero/hero-main.jpg"
+            alt="Современная кухня на заказ"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+          />
+        </div>
       </section>
     </>
   );
