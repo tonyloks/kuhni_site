@@ -95,7 +95,6 @@ const Works = () => {
         __html: `
           .works-section {
             padding: 80px 0;
-            background: var(--lm-bg-alt, #f8f9fa);
             color: var(--lm-text);
           }
 
