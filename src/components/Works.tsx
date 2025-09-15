@@ -41,14 +41,14 @@ const Works = () => {
     },
     {
       id: 'project-2',
-      mainImage: '/images/hero/hero-main.jpg',
+      mainImage: '/images/works/project_2/main.png',
       title: 'Прямая кухня в стиле лофт',
       price: '85 000 ₽',
       description: 'Стильная прямая кухня в индустриальном стиле. Темные фасады ЛДСП Egger, металлическая фурнитура и минималистичный дизайн.',
       hoverText: 'Ознакомиться с проектом',
       gallery: [
-        { description: 'Общий вид кухни', src: '/images/hero/hero-main.jpg' },
-        { description: 'Детали фасадов', src: '/images/hero/hero-main.jpg' }
+        { description: 'Общий вид кухни', src: '/images/works/project_2/main.png' },
+        { description: 'Детали фасадов', src: '/images/works/project_2/2.png' }
       ],
       details: [
         { name: 'Материал фасадов', value: 'ЛДСП Egger' },
@@ -61,16 +61,14 @@ const Works = () => {
     },
     {
       id: 'project-3',
-      mainImage: '/images/hero/hero-main.jpg',
+      mainImage: '/images/works/project_3/main.png',
       title: 'Кухня с островом из массива',
       price: '350 000 ₽',
       description: 'Премиальная кухня с островом из натурального массива ясеня. Искусственный камень столешницы, премиальная фурнитура Blum.',
       hoverText: 'Ознакомиться с проектом',
       gallery: [
-        { description: 'Общий вид кухни с островом', src: '/images/hero/hero-main.jpg' },
-        { description: 'Крупный план острова', src: '/images/hero/hero-main.jpg' },
-        { description: 'Фасады из массива', src: '/images/hero/hero-main.jpg' },
-        { description: 'Системы хранения', src: '/images/hero/hero-main.jpg' }
+        { description: 'Общий вид кухни с островом', src: '/images/works/project_3/main.png' },
+        { description: 'Крупный план острова', src: '/images/works/project_3/1.png' }
       ],
       details: [
         { name: 'Материал фасадов', value: 'Массив ясеня' },
