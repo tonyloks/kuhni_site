@@ -164,6 +164,7 @@ const Works = () => {
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            flex: 1;
           }
 
           .work-item__title {
@@ -171,6 +172,7 @@ const Works = () => {
             font-size: 1.25rem;
             margin: 0;
             color: var(--lm-heading);
+            font-weight: 700;
           }
 
           .work-item__description {
@@ -179,7 +181,7 @@ const Works = () => {
             line-height: 1.5;
             color: var(--lm-text);
             margin: 0;
-            flex: 1;
+            font-weight: 600;
           }
 
           .work-item__actions {
@@ -191,42 +193,6 @@ const Works = () => {
 
           .work-item__button {
             flex-shrink: 0;
-          }
-
-          .work-item__button .btn-secondary {
-            background: var(--lm-heading, #111827);
-            color: white;
-            border-color: var(--lm-heading, #111827);
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-          }
-
-          .work-item__button .btn-secondary:hover {
-            background: var(--lm-text, #4B5563);
-            border-color: var(--lm-text, #4B5563);
-          }
-
-          .works-actions .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: transparent;
-            border: 2px solid var(--lm-accent, #007bff);
-            color: var(--lm-accent, #007bff);
-            text-decoration: none;
-            border-radius: 8px;
-            font-family: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-          }
-
-          .works-actions .btn-secondary:hover {
-            background: var(--lm-accent, #007bff);
-            color: white;
           }
 
           /* Modal styles */
@@ -371,21 +337,9 @@ const Works = () => {
                 <div className="work-item__content">
                   <h3 className="work-item__title">{project.title}</h3>
                   <p className="work-item__description">{project.description}</p>
-                  <div className="work-item__actions">
-                    <div className="work-item__button">
-                      <button className="btn-secondary" onClick={() => openProject(project)}>
-                        Детали проекта
-                      </button>
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}
-          </div>
-          <div className="works-actions">
-            <a href="/portfolio" className="btn-secondary">
-              Перейти в портфолио
-            </a>
           </div>
         </div>
       </section>
