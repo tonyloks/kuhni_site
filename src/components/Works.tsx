@@ -78,6 +78,128 @@ const Works = () => {
         { name: 'Стоимость', value: '350 000 ₽' },
         { name: 'Срок изготовления', value: '7 недель' }
       ]
+    },
+    {
+      id: 'project-4',
+      mainImage: '/images/works/project_1/main.png',
+      title: 'Угловая кухня в скандинавском стиле',
+      price: '140 000 ₽',
+      description: 'Современная угловая кухня с минималистичным дизайном. Светлые фасады МДФ с эмалью, практичная столешница и удобная система хранения.',
+      hoverText: 'Ознакомиться с проектом',
+      gallery: [
+        { description: 'Общий вид кухни', src: '/images/works/project_1/main.png' },
+        { description: 'Рабочая зона', src: '/images/works/project_1/2.png' },
+        { description: 'Фурнитура и ящики', src: '/images/works/project_1/3.png' }
+      ],
+      details: [
+        { name: 'Материал фасадов', value: 'МДФ, эмаль' },
+        { name: 'Столешница', value: 'Пластиковая' },
+        { name: 'Фурнитура', value: 'Hettich' },
+        { name: 'Размеры', value: '3200x1800 мм' },
+        { name: 'Стоимость', value: '140 000 ₽' },
+        { name: 'Срок изготовления', value: '4 недели' }
+      ]
+    },
+    {
+      id: 'project-5',
+      mainImage: '/images/works/project_2/main.png',
+      title: 'Прямая кухня в стиле лофт',
+      price: '85 000 ₽',
+      description: 'Стильная прямая кухня в индустриальном стиле. Темные фасады ЛДСП Egger, металлическая фурнитура и минималистичный дизайн.',
+      hoverText: 'Ознакомиться с проектом',
+      gallery: [
+        { description: 'Общий вид кухни', src: '/images/works/project_2/main.png' },
+        { description: 'Детали фасадов', src: '/images/works/project_2/2.png' }
+      ],
+      details: [
+        { name: 'Материал фасадов', value: 'ЛДСП Egger' },
+        { name: 'Столешница', value: 'Пластик' },
+        { name: 'Фурнитура', value: 'Boyard' },
+        { name: 'Размеры', value: '3000 мм' },
+        { name: 'Стоимость', value: '85 000 ₽' },
+        { name: 'Срок изготовления', value: '3 недели' }
+      ]
+    },
+    {
+      id: 'project-6',
+      mainImage: '/images/works/project_3/main.png',
+      title: 'Кухня с островом из массива',
+      price: '350 000 ₽',
+      description: 'Премиальная кухня с островом из натурального массива ясеня. Искусственный камень столешницы, премиальная фурнитура Blum.',
+      hoverText: 'Ознакомиться с проектом',
+      gallery: [
+        { description: 'Общий вид кухни с островом', src: '/images/works/project_3/main.png' },
+        { description: 'Крупный план острова', src: '/images/works/project_3/1.png' }
+      ],
+      details: [
+        { name: 'Материал фасадов', value: 'Массив ясеня' },
+        { name: 'Столешница', value: 'Искусственный камень' },
+        { name: 'Фурнитура', value: 'Blum' },
+        { name: 'Размеры', value: '4500x2200 мм + остров 1200x800 мм' },
+        { name: 'Стоимость', value: '350 000 ₽' },
+        { name: 'Срок изготовления', value: '7 недель' }
+      ]
+    },
+    {
+      id: 'project-7',
+      mainImage: '/images/works/project_1/main.png',
+      title: 'Угловая кухня в скандинавском стиле',
+      price: '140 000 ₽',
+      description: 'Современная угловая кухня с минималистичным дизайном. Светлые фасады МДФ с эмалью, практичная столешница и удобная система хранения.',
+      hoverText: 'Ознакомиться с проектом',
+      gallery: [
+        { description: 'Общий вид кухни', src: '/images/works/project_1/main.png' },
+        { description: 'Рабочая зона', src: '/images/works/project_1/2.png' },
+        { description: 'Фурнитура и ящики', src: '/images/works/project_1/3.png' }
+      ],
+      details: [
+        { name: 'Материал фасадов', value: 'МДФ, эмаль' },
+        { name: 'Столешница', value: 'Пластиковая' },
+        { name: 'Фурнитура', value: 'Hettich' },
+        { name: 'Размеры', value: '3200x1800 мм' },
+        { name: 'Стоимость', value: '140 000 ₽' },
+        { name: 'Срок изготовления', value: '4 недели' }
+      ]
+    },
+    {
+      id: 'project-8',
+      mainImage: '/images/works/project_2/main.png',
+      title: 'Прямая кухня в стиле лофт',
+      price: '85 000 ₽',
+      description: 'Стильная прямая кухня в индустриальном стиле. Темные фасады ЛДСП Egger, металлическая фурнитура и минималистичный дизайн.',
+      hoverText: 'Ознакомиться с проектом',
+      gallery: [
+        { description: 'Общий вид кухни', src: '/images/works/project_2/main.png' },
+        { description: 'Детали фасадов', src: '/images/works/project_2/2.png' }
+      ],
+      details: [
+        { name: 'Материал фасадов', value: 'ЛДСП Egger' },
+        { name: 'Столешница', value: 'Пластик' },
+        { name: 'Фурнитура', value: 'Boyard' },
+        { name: 'Размеры', value: '3000 мм' },
+        { name: 'Стоимость', value: '85 000 ₽' },
+        { name: 'Срок изготовления', value: '3 недели' }
+      ]
+    },
+    {
+      id: 'project-9',
+      mainImage: '/images/works/project_3/main.png',
+      title: 'Кухня с островом из массива',
+      price: '350 000 ₽',
+      description: 'Премиальная кухня с островом из натурального массива ясеня. Искусственный камень столешницы, премиальная фурнитура Blum.',
+      hoverText: 'Ознакомиться с проектом',
+      gallery: [
+        { description: 'Общий вид кухни с островом', src: '/images/works/project_3/main.png' },
+        { description: 'Крупный план острова', src: '/images/works/project_3/1.png' }
+      ],
+      details: [
+        { name: 'Материал фасадов', value: 'Массив ясеня' },
+        { name: 'Столешница', value: 'Искусственный камень' },
+        { name: 'Фурнитура', value: 'Blum' },
+        { name: 'Размеры', value: '4500x2200 мм + остров 1200x800 мм' },
+        { name: 'Стоимость', value: '350 000 ₽' },
+        { name: 'Срок изготовления', value: '7 недель' }
+      ]
     }
   ];
 
@@ -131,7 +253,7 @@ const Works = () => {
 
           .work-item__image {
             position: relative;
-            height: 280px;
+            height: 200px;
             overflow: hidden;
           }
 
