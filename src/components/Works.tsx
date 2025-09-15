@@ -208,12 +208,7 @@ const Works = () => {
             border-color: var(--lm-text, #4B5563);
           }
 
-          .works-actions {
-            text-align: center;
-            margin-top: 3rem;
-          }
-
-          .btn-secondary {
+          .works-actions .btn-secondary {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -229,7 +224,7 @@ const Works = () => {
             transition: all 0.3s ease;
           }
 
-          .btn-secondary:hover {
+          .works-actions .btn-secondary:hover {
             background: var(--lm-accent, #007bff);
             color: white;
           }
