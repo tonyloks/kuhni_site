@@ -148,6 +148,7 @@ const Works = () => {
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 2;
           }
 
           .work-item__price-badge-text {
@@ -157,6 +158,34 @@ const Works = () => {
             color: var(--lm-heading, #111827);
             margin: 0;
             white-space: nowrap;
+          }
+
+          .work-item__overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 2rem 1rem 1rem;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+          }
+
+          .work-item:hover .work-item__overlay {
+            opacity: 1;
+          }
+
+          .work-item__overlay-text {
+            color: white;
+            font-family: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
           }
 
           .work-item__content {
@@ -332,6 +361,9 @@ const Works = () => {
                   />
                   <div className="work-item__price-badge">
                     <p className="work-item__price-badge-text">от {project.price}</p>
+                  </div>
+                  <div className="work-item__overlay">
+                    <span className="work-item__overlay-text">Подробнее о проекте</span>
                   </div>
                 </div>
                 <div className="work-item__content">
