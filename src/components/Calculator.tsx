@@ -13,6 +13,7 @@ interface Step {
   id: string;
   number: number;
   question: string;
+  shortQuestion: string;
   options: StepOption[];
 }
 
@@ -21,6 +22,7 @@ const steps: Step[] = [
     id: 'shape',
     number: 1,
     question: 'Какая форма кухни вам подходит?',
+    shortQuestion: 'Форма кухни',
     options: [
       { label: 'Прямая', value: 'straight' },
       { label: 'Угловая', value: 'corner' },
@@ -32,6 +34,7 @@ const steps: Step[] = [
     id: 'size',
     number: 2,
     question: 'Укажите примерные размеры кухни',
+    shortQuestion: 'Размеры',
     options: [
       { label: 'До 3 метров', value: 'small' },
       { label: 'От 3 до 5 метров', value: 'medium' },
@@ -42,6 +45,7 @@ const steps: Step[] = [
     id: 'facade',
     number: 3,
     question: 'Какой материал фасадов предпочитаете?',
+    shortQuestion: 'Материал фасадов',
     options: [
       { label: 'ЛДСП', value: 'ldsp' },
       { label: 'МДФ (плёнка/эмаль)', value: 'mdf' },
@@ -53,6 +57,7 @@ const steps: Step[] = [
     id: 'countertop',
     number: 4,
     question: 'Какую столешницу выберем?',
+    shortQuestion: 'Столешница',
     options: [
       { label: 'Пластиковая (HPL)', value: 'plastic' },
       { label: 'Искусственный камень', value: 'stone' },
@@ -735,7 +740,7 @@ const Calculator = () => {
                   <div className="quiz-result__overview">
                     {steps.map((step) => (
                       <div key={step.id} className="quiz-result__summary-item">
-                        <div className="quiz-result__summary-label">{step.question}</div>
+                        <div className="quiz-result__summary-label">{step.shortQuestion}</div>
                         <div className="quiz-result__summary-value">
                           {step.id === 'size' ? `${answers[step.id]} метров` : (step.options.find((option) => option.value === answers[step.id])?.label || '—')}
                         </div>
