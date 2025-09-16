@@ -105,6 +105,17 @@ const getPriceRange = (answers: AnswerState) => {
       break;
   }
 
+  if (answers.size && !isNaN(parseFloat(answers.size))) {
+    const size = parseFloat(answers.size);
+    if (size >= 3 && size <= 5) {
+      min += 15000;
+      max += 20000;
+    } else if (size > 5) {
+      min += 28000;
+      max += 36000;
+    }
+  }
+
   switch (answers.facade) {
     case 'mdf':
       min += 15000;
@@ -134,10 +145,11 @@ const Calculator = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<AnswerState>({});
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [sizeValue, setSizeValue] = useState(3);
 
   const totalSteps = steps.length;
   const activeStep = steps[currentStep];
-  const selectedValue = activeStep ? answers[activeStep.id] : undefined;
+  const selectedValue = activeStep ? (activeStep.id === 'size' ? sizeValue.toString() : answers[activeStep.id]) : undefined;
 
   const progress = useMemo(() => {
     const base = currentStep / totalSteps;
@@ -272,6 +284,34 @@ const Calculator = () => {
               grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
               gap: 1.25rem;
               margin-bottom: 32px;
+            }
+
+            .quiz-size-slider {
+              margin-bottom: 32px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 1rem;
+            }
+
+            .quiz-size-slider input[type="range"] {
+              flex: 1;
+              max-width: 300px;
+            }
+
+            .quiz-size-slider input[type="number"] {
+              width: 80px;
+              padding: 8px;
+              border-radius: 8px;
+              border: 1px solid var(--lm-border);
+              font-size: 1rem;
+              text-align: center;
+            }
+
+            .quiz-size-slider span {
+              font-size: 1.125rem;
+              font-weight: 500;
+              color: var(--lm-heading);
             }
 
             .quiz-option {
@@ -596,41 +636,71 @@ const Calculator = () => {
             {currentStep < totalSteps && activeStep ? (
               <div className="quiz-step">
                 <h3 className="quiz-step__question">{activeStep.question}</h3>
-                <div className="quiz-options">
-                  {activeStep.options.map((option) => {
-                    const isSelected = selectedValue === option.value;
-                    const getImageFilename = (value: string) => {
-                      switch (value) {
-                        case 'straight': return 'shape-straight.jpg';
-                        case 'corner': return 'shape-corner.jpg';
-                        case 'u-shaped': return 'shape-u.jpg';
-                        case 'island': return 'shape-island.jpg';
-                        default: return '';
-                      }
-                    };
-                    const imagePath = activeStep.id === 'shape' ? `/images/quiz/shape/${getImageFilename(option.value)}` : null;
-                    
-                    return (
-                      <button
-                        type="button"
-                        key={option.value}
-                        className={`quiz-option${isSelected ? ' is-selected' : ''}`}
-                        onClick={() => handleOptionClick(option.value)}
-                      >
-                        {imagePath && (
-                          <Image
-                            src={imagePath}
-                            alt={option.label}
-                            fill
-                            className="quiz-option__image"
-                          />
-                        )}
-                        <span className="quiz-option__label">{option.label}</span>
-                        {option.helper && <span className="quiz-helpers">{option.helper}</span>}
-                      </button>
-                    );
-                  })}
-                </div>
+                {activeStep.id === 'size' ? (
+                  <div className="quiz-size-slider">
+                    <input
+                      type="range"
+                      min="1"
+                      max="10"
+                      step="0.5"
+                      value={sizeValue}
+                      onChange={(e) => {
+                        const val = parseFloat(e.target.value);
+                        setSizeValue(val);
+                        setAnswers(prev => ({ ...prev, size: val.toString() }));
+                      }}
+                    />
+                    <input
+                      type="number"
+                      min="1"
+                      max="10"
+                      step="0.5"
+                      value={sizeValue}
+                      onChange={(e) => {
+                        const val = parseFloat(e.target.value) || 1;
+                        setSizeValue(val);
+                        setAnswers(prev => ({ ...prev, size: val.toString() }));
+                      }}
+                    />
+                    <span>метров</span>
+                  </div>
+                ) : (
+                  <div className="quiz-options">
+                    {activeStep.options.map((option) => {
+                      const isSelected = selectedValue === option.value;
+                      const getImageFilename = (value: string) => {
+                        switch (value) {
+                          case 'straight': return 'shape-straight.jpg';
+                          case 'corner': return 'shape-corner.jpg';
+                          case 'u-shaped': return 'shape-u.jpg';
+                          case 'island': return 'shape-island.jpg';
+                          default: return '';
+                        }
+                      };
+                      const imagePath = activeStep.id === 'shape' ? `/images/quiz/shape/${getImageFilename(option.value)}` : null;
+                      
+                      return (
+                        <button
+                          type="button"
+                          key={option.value}
+                          className={`quiz-option${isSelected ? ' is-selected' : ''}`}
+                          onClick={() => handleOptionClick(option.value)}
+                        >
+                          {imagePath && (
+                            <Image
+                              src={imagePath}
+                              alt={option.label}
+                              fill
+                              className="quiz-option__image"
+                            />
+                          )}
+                          <span className="quiz-option__label">{option.label}</span>
+                          {option.helper && <span className="quiz-helpers">{option.helper}</span>}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
                 <div className="quiz-controls">
                   <button
                     type="button"
@@ -667,7 +737,7 @@ const Calculator = () => {
                       <div key={step.id} className="quiz-result__summary-item">
                         <div className="quiz-result__summary-label">{step.question}</div>
                         <div className="quiz-result__summary-value">
-                          {step.options.find((option) => option.value === answers[step.id])?.label || '—'}
+                          {step.id === 'size' ? `${answers[step.id]} метров` : (step.options.find((option) => option.value === answers[step.id])?.label || '—')}
                         </div>
                       </div>
                     ))}
