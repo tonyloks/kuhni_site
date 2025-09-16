@@ -424,8 +424,8 @@ const Calculator = () => {
             }
 
             .quiz-result__title {
-              font-size: clamp(1.75rem, 1.5vw + 1.25rem, 2.5rem);
-              margin: 0 0 16px;
+              font-size: clamp(1.5rem, 1.25vw + 1rem, 2rem);
+              margin: 0 0 12px;
               font-family: var(--font-source-sans-3), sans-serif;
             }
 
@@ -433,8 +433,8 @@ const Calculator = () => {
               background: #fff;
               border-radius: 16px;
               border: 1px solid var(--lm-border);
-              padding: 24px;
-              margin-bottom: 20px;
+              padding: 16px;
+              margin-bottom: 16px;
             }
 
             .quiz-result__price-label {
@@ -445,22 +445,22 @@ const Calculator = () => {
             }
 
             .quiz-result__price-value {
-              font-size: clamp(1.75rem, 1.8vw + 1.25rem, 2.5rem);
+              font-size: clamp(1.5rem, 1.5vw + 1rem, 2rem);
               color: var(--lm-heading);
               font-family: var(--font-dm-serif-display), serif;
             }
 
             .quiz-result__disclaimer {
-              font-size: 0.9rem;
+              font-size: 0.8rem;
               color: var(--lm-text);
               line-height: 1.5;
-              margin-bottom: 32px;
+              margin-bottom: 20px;
             }
 
             .quiz-result__overview {
               display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-              gap: 1rem;
+              grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+              gap: 0.75rem;
               margin-bottom: 32px;
             }
 
@@ -468,7 +468,7 @@ const Calculator = () => {
               background: #fff;
               border-radius: 12px;
               border: 1px solid var(--lm-border);
-              padding: 16px 20px;
+              padding: 12px 16px;
             }
 
             .quiz-result__summary-label {
@@ -490,12 +490,12 @@ const Calculator = () => {
               background: #fff;
               border-radius: 16px;
               border: 1px solid var(--lm-border);
-              padding: 24px;
+              padding: 16px;
             }
 
             .quiz-form__title {
               margin: 0 0 8px;
-              font-size: 1.5rem;
+              font-size: 1.25rem;
             }
 
             .quiz-form__subtitle {
@@ -507,7 +507,7 @@ const Calculator = () => {
             .quiz-form__fields {
               display: grid;
               grid-template-columns: repeat(2, minmax(0, 1fr));
-              gap: 16px;
+              gap: 12px;
               margin-bottom: 20px;
             }
 
@@ -531,7 +531,7 @@ const Calculator = () => {
               color: var(--lm-primary-text);
               border: none;
               border-radius: 12px;
-              padding: 16px;
+              padding: 14px;
               font-weight: 600;
               font-size: 1rem;
               cursor: pointer;
@@ -565,7 +565,7 @@ const Calculator = () => {
               display: flex;
               flex-wrap: wrap;
               gap: 12px;
-              margin-top: 32px;
+              margin-top: 20px;
             }
 
             .quiz-result__restart {
