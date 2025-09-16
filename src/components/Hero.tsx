@@ -64,7 +64,7 @@ const Hero = () => {
             position: relative;
             border-radius: 16px;
             overflow: hidden;
-            background: linear-gradient(180deg, var(--lm-card-from), var(--lm-card-to));
+            background: var(--lm-card-from);
             border: 1px dashed var(--lm-deco-border);
             height: 100%;
             min-height: 400px;

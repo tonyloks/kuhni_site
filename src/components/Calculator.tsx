@@ -222,9 +222,13 @@ const Calculator = () => {
             .quiz-card {
               padding: 32px;
               border-radius: 20px;
-              background: var(--lm-card-to);
+              background: var(--lm-card-from);
               border: 1px solid var(--lm-border);
               box-shadow: 0 10px 40px rgba(17, 24, 39, 0.08);
+              max-width: 800px;
+              margin: 0 auto;
+              max-height: 800px;
+              overflow-y: auto;
             }
 
             .quiz-progress {
@@ -259,6 +263,7 @@ const Calculator = () => {
               font-size: 1.75rem;
               line-height: 1.3;
               margin: 0 0 24px;
+              font-family: var(--font-source-sans-3), sans-serif;
             }
 
             .quiz-options {
@@ -276,8 +281,9 @@ const Calculator = () => {
               background: #fff;
               border-radius: 16px;
               border: 1px solid var(--lm-border);
-              padding: 20px;
-              min-height: 160px;
+              padding: 16px;
+              min-height: 120px;
+              aspect-ratio: 1;
               cursor: pointer;
               transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
             }
@@ -367,6 +373,7 @@ const Calculator = () => {
             .quiz-result__title {
               font-size: clamp(1.75rem, 1.5vw + 1.25rem, 2.5rem);
               margin: 0 0 16px;
+              font-family: var(--font-source-sans-3), sans-serif;
             }
 
             .quiz-result__price-card {
