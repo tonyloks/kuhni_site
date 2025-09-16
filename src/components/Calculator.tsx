@@ -222,7 +222,7 @@ const Calculator = () => {
             .quiz-card {
               padding: 32px;
               border-radius: 20px;
-              background: linear-gradient(180deg, var(--lm-card-from) 0%, var(--lm-card-to) 100%);
+              background: var(--lm-card-to);
               border: 1px solid var(--lm-border);
               box-shadow: 0 10px 40px rgba(17, 24, 39, 0.08);
             }
@@ -252,7 +252,7 @@ const Calculator = () => {
             .quiz-progress__meta {
               font-size: 0.875rem;
               color: var(--lm-text);
-              font-weight: 600;
+              font-weight: 500;
             }
 
             .quiz-step__question {
@@ -286,7 +286,7 @@ const Calculator = () => {
               content: '';
               position: absolute;
               inset: 16px 16px 60px;
-              background: linear-gradient(180deg, rgba(185, 28, 28, 0.08) 0%, rgba(185, 28, 28, 0.02) 100%);
+              background: rgba(185, 28, 28, 0.08);
               border-radius: 12px;
               opacity: 0;
               transition: opacity .2s ease;
@@ -295,7 +295,7 @@ const Calculator = () => {
             .quiz-option__label {
               position: relative;
               font-size: 1.125rem;
-              font-weight: 600;
+              font-weight: 500;
               color: var(--lm-heading);
               margin: 0;
             }
@@ -316,7 +316,7 @@ const Calculator = () => {
 
             .quiz-option.is-selected::before {
               opacity: 1;
-              background: linear-gradient(180deg, rgba(185, 28, 28, 0.16) 0%, rgba(185, 28, 28, 0.04) 100%);
+              background: rgba(185, 28, 28, 0.14);
             }
 
             .quiz-helpers {
@@ -381,7 +381,7 @@ const Calculator = () => {
               font-size: 0.95rem;
               color: var(--lm-text);
               margin-bottom: 6px;
-              font-weight: 600;
+              font-weight: 500;
             }
 
             .quiz-result__price-value {
@@ -417,12 +417,12 @@ const Calculator = () => {
               letter-spacing: 0.02em;
               color: rgba(17, 24, 39, 0.6);
               margin-bottom: 4px;
-              font-weight: 600;
+              font-weight: 500;
             }
 
             .quiz-result__summary-value {
               font-size: 1.1rem;
-              font-weight: 600;
+              font-weight: 500;
               color: var(--lm-heading);
             }
 
@@ -493,7 +493,7 @@ const Calculator = () => {
               display: inline-flex;
               align-items: center;
               gap: 0.5rem;
-              font-weight: 600;
+              font-weight: 500;
               color: var(--lm-heading);
               background: rgba(185, 28, 28, 0.08);
               border-radius: 999px;
