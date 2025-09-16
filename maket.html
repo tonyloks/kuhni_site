@@ -14,8 +14,7 @@
                 :root{
                   /* Фон страницы, секций, карточек */
                   --lm-bg:            #FFFFFF;   /* общий фон */
-                  --lm-card-from:     #FFFFFF;   /* верх градиента карточки/плейсхолдера */
-                  --lm-card-to:       #FFF5F5;   /* низ градиента карточки/плейсхолдера */
+                  --lm-card-bg:       #FFFFFF;   /* фон карточки */
 
                   /* Текст */
                   --lm-text:          #4B5563;   /* основной текст параграфов */
@@ -61,7 +60,7 @@
 
                 /* ===== Контейнеры/карточки/плейсхолдеры изображений ===== */
                 .card{
-                  background: linear-gradient(180deg, var(--lm-card-from) 0%, var(--lm-card-to) 100%); /* фон карточки */
+                  background: var(--lm-card-bg); /* фон карточки */
                   border: 1px solid var(--lm-border);  /* рамка карточки */
                   border-radius: 16px;
                   box-shadow: 0 1px 2px rgba(16,24,40,0.04);
@@ -193,7 +192,7 @@
                 <item url="/catalog">Каталог</item>
                 <item url="/portfolio">Наши работы</item>
                 <item url="/reviews">Отзывы</item>
-                <item url="/contacts">Контакты</item>
+                <item url="#main-contacts">Контакты</item>
             </navigation>
             <contacts>
                 <phone>+7 (XXX) XXX-XX-XX</phone>
@@ -209,7 +208,7 @@
                 <item url="/catalog">Каталог</item>
                 <item url="/portfolio">Наши работы</item>
                 <item url="/reviews">Отзывы</item>
-                <item url="/contacts">Контакты</item>
+                <item url="#main-contacts">Контакты</item>
             </navigation>
             <contacts>
                 <phone>+7 (XXX) XXX-XX-XX</phone>
@@ -425,58 +424,119 @@
                     </contact-form>
                 </result>
             </quiz>
-            
+        </screen>
+
+        <!-- ЭКРАН: Подробные преимущества -->
+        <screen id="detailed-advantages">
+            <title>Почему нам доверяют создание уюта</title>
+            <advantage-list>
+                <advantage>
+                    <icon>/icons/factory.svg</icon>
+                    <title>Собственное производство</title>
+                    <description>Контролируем каждый этап — от раскроя до сборки. Это позволяет нам гарантировать качество, соблюдать сроки и предлагать честные цены без посредников.</description>
+                </advantage>
+                <advantage>
+                    <icon>/icons/ruler.svg</icon>
+                    <title>Решения под любой нестандарт</title>
+                    <description>Мы не ограничены стандартными модулями. Создаём мебель, которая идеально вписывается в геометрию ваших стен, учитывая выступы, ниши и коммуникации.</description>
+                </advantage>
+                <advantage>
+                    <icon>/icons/materials.svg</icon>
+                    <title>Проверенные материалы и фурнитура</title>
+                    <description>Работаем с надёжными поставщиками МДФ, ЛДСП, массива и пластика. Устанавливаем фурнитуру Hettich, Boyard и Blum, чтобы ваша кухня служила долгие годы.</description>
+                </advantage>
+                 <advantage>
+                    <icon>/icons/chat.svg</icon>
+                    <title>Прозрачный процесс работы</title>
+                    <description>От первого расчёта до финальной приёмки — вы всегда знаете, на каком этапе ваш проект. Делаем 3D-эскиз, заключаем договор и остаёмся на связи.</description>
+                </advantage>
+            </advantage-list>
+        </screen>
+
+        <!-- ЭКРАН: О компании -->
+        <screen id="about-us">
+            <content-grid>
+                <text-content>
+                    <title>26 лет создаём кухни, в которые хочется возвращаться</title>
+                    <paragraph>«Ле-манш» — это семейное дело, которое выросло из небольшой мастерской в современное производство. Уже более четверти века мы специализируемся на кухнях и корпусной мебели по индивидуальным проектам.</paragraph>
+                    <paragraph>Наша команда — это мастера, которые работают с нами более 15 лет. Мы не гонимся за массовостью, а вкладываем опыт и душу в каждый проект, чтобы мебель радовала вас функциональностью, качеством и внешним видом.</paragraph>
+                </text-content>
+                <image-content>
+                    <image>/images/about-us-photo.jpg</image>
+                    <caption>Наше производство в Ростове-на-Дону</caption>
+                </image-content>
+            </content-grid>
+        </screen>
+
+        <!-- ЭКРАН: FAQ -->
+        <screen id="faq">
+            <title>Ответы на частые вопросы</title>
+            <faq-list>
+                <faq-item>
+                    <question>Можно ли сделать кухню по моим размерам, если у меня нестандартная планировка?</question>
+                    <answer>Да, конечно. Это наша основная специализация. Мы изготавливаем кухни и любую корпусную мебель точно по вашим размерам, учитывая все особенности помещения: ниши, выступы, трубы и углы. Стандартных модулей у нас нет — только индивидуальные проекты.</answer>
+                </faq-item>
+                <faq-item>
+                    <question>Какие сроки изготовления кухни?</question>
+                    <answer>В среднем, стандартный срок изготовления составляет около 4 недель. Если вы выбираете фасады из массива дерева, срок может увеличиться до 2 месяцев из-за особенностей материала. Возможность ускорения заказа обсуждается индивидуально.</answer>
+                </faq-item>
+                <faq-item>
+                    <question>Замер платный?</question>
+                    <answer>Да, выезд замерщика на объект является платной услугой, так как это важный и ответственный этап работы. Однако, при заключении договора на изготовление мебели, мы полностью вычитаем стоимость замера из итоговой суммы. Для вас он становится бесплатным.</answer>
+                </faq-item>
+                <faq-item>
+                    <question>Вы устанавливаете встраиваемую бытовую технику?</question>
+                    <answer>Да, наши монтажники выполняют установку и подключение любой встраиваемой техники: варочных панелей, духовых шкафов, посудомоечных машин, вытяжек и холодильников. Мы делаем все необходимые выпилы в столешнице и корпусах.</answer>
+                </faq-item>
+                <faq-item>
+                    <question>Какую гарантию вы предоставляете?</question>
+                    <answer>Мы предоставляем официальную гарантию 1 год на всю нашу мебель. Гарантия распространяется на фурнитуру, механизмы и производственные дефекты, которые могут проявиться в ходе правильной эксплуатации.</answer>
+                </faq-item>
+            </faq-list>
+        </screen>
+
+        <!-- ЭКРАН: Контакты -->
+        <screen id="main-contacts">
+            <title>Свяжитесь с нами</title>
+            <content-wrapper>
+                <contact-info>
+                    <block id="address">
+                        <label>Адрес салона:</label>
+                        <value>г. Ростов-на-Дону, [улица, номер дома]</value>
+                    </block>
+                    <block id="phone">
+                        <label>Телефон:</label>
+                        <value>+7 (XXX) XXX-XX-XX</value>
+                    </block>
+                    <block id="messengers">
+                        <label>Напишите нам в мессенджеры:</label>
+                        <value>Telegram, WhatsApp</value>
+                    </block>
+                     <block id="email">
+                        <label>Электронная почта:</label>
+                        <value>email@example.com</value>
+                    </block>
+                    <block id="schedule">
+                        <label>График работы:</label>
+                        <value>Ежедневно, с 10:00 до 19:00</value>
+                    </block>
+                </contact-info>
+                <feedback-form>
+                    <title>Остались вопросы? Напишите нам</title>
+                    <input type="text" placeholder="Ваше имя" name="name"/>
+                    <input type="tel" placeholder="Ваш телефон" name="phone"/>
+                    <textarea placeholder="Ваш вопрос или сообщение" name="message"></textarea>
+                    <button type="submit">Отправить сообщение</button>
+                </feedback-form>
+            </content-wrapper>
+            <map>
+                <yandex-maps-placeholder>Интерактивная Яндекс.Карта с отметкой нашего салона</yandex-maps-placeholder>
+            </map>
         </screen>
 
         <!-- FOOTER (используется общий компонент) -->
         
     </page>
     
-    <!-- СТРАНИЦА: Контакты -->
-    <page id="contacts" title="Контакты">
-
-        <!-- HEADER (используется общий компонент) -->
-
-        <content>
-            <title>Свяжитесь с нами</title>
-            <contact-info>
-                <block id="address">
-                    <label>Адрес салона:</label>
-                    <value>г. Ростов-на-Дону, [улица, номер дома]</value>
-                </block>
-                <block id="phone">
-                    <label>Телефон:</label>
-                    <value>+7 (XXX) XXX-XX-XX</value>
-                </block>
-                <block id="messengers">
-                    <label>Напишите нам в мессенджеры:</label>
-                    <value>Telegram, WhatsApp</value>
-                </block>
-                 <block id="email">
-                    <label>Электронная почта:</label>
-                    <value>email@example.com</value>
-                </block>
-                <block id="schedule">
-                    <label>График работы:</label>
-                    <value>Ежедневно, с 10:00 до 19:00</value>
-                </block>
-            </contact-info>
-            
-            <map>
-                <yandex-maps-placeholder>Интерактивная Яндекс.Карта с отметкой нашего салона</yandex-maps-placeholder>
-            </map>
-
-            <feedback-form>
-                <title>Остались вопросы? Напишите нам</title>
-                <input type="text" placeholder="Ваше имя" name="name"/>
-                <input type="tel" placeholder="Ваш телефон" name="phone"/>
-                <textarea placeholder="Ваш вопрос или сообщение" name="message"></textarea>
-                <button type="submit">Отправить сообщение</button>
-            </feedback-form>
-        </content>
-        
-        <!-- FOOTER (используется общий компонент) -->
-        
-    </page>
-    
 </website>
+
