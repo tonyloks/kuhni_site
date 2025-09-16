@@ -268,7 +268,7 @@ const Calculator = () => {
 
             .quiz-options {
               display: grid;
-              grid-template-columns: repeat(2, minmax(0, 1fr));
+              grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
               gap: 1.25rem;
               margin-bottom: 32px;
             }
@@ -281,8 +281,8 @@ const Calculator = () => {
               background: #fff;
               border-radius: 16px;
               border: 1px solid var(--lm-border);
-              padding: 16px;
-              min-height: 120px;
+              padding: 12px;
+              min-height: 90px;
               aspect-ratio: 1;
               cursor: pointer;
               transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
