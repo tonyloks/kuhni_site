@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from 'react';
+import Image from 'next/image';
 
 interface StepOption {
   label: string;
@@ -225,7 +226,7 @@ const Calculator = () => {
               background: var(--lm-card-from);
               border: 1px solid var(--lm-border);
               box-shadow: 0 10px 40px rgba(17, 24, 39, 0.08);
-              max-width: 800px;
+              max-width: 900px;
               margin: 0 auto;
               max-height: 800px;
               overflow-y: auto;
@@ -286,16 +287,27 @@ const Calculator = () => {
               aspect-ratio: 1;
               cursor: pointer;
               transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+              overflow: hidden;
             }
 
             .quiz-option::before {
               content: '';
               position: absolute;
               inset: 16px 16px 60px;
-              background: rgba(185, 28, 28, 0.08);
+              background: rgba(0, 0, 0, 0.1);
               border-radius: 12px;
               opacity: 0;
               transition: opacity .2s ease;
+            }
+
+            .quiz-option__image {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 12px;
             }
 
             .quiz-option__label {
@@ -304,6 +316,7 @@ const Calculator = () => {
               font-weight: 500;
               color: var(--lm-heading);
               margin: 0;
+              z-index: 1;
             }
 
             .quiz-option:hover {
@@ -322,7 +335,7 @@ const Calculator = () => {
 
             .quiz-option.is-selected::before {
               opacity: 1;
-              background: rgba(185, 28, 28, 0.14);
+              background: rgba(0, 0, 0, 0.15);
             }
 
             .quiz-helpers {
@@ -586,6 +599,17 @@ const Calculator = () => {
                 <div className="quiz-options">
                   {activeStep.options.map((option) => {
                     const isSelected = selectedValue === option.value;
+                    const getImageFilename = (value: string) => {
+                      switch (value) {
+                        case 'straight': return 'shape-straight.jpg';
+                        case 'corner': return 'shape-corner.jpg';
+                        case 'u-shaped': return 'shape-u.jpg';
+                        case 'island': return 'shape-island.jpg';
+                        default: return '';
+                      }
+                    };
+                    const imagePath = activeStep.id === 'shape' ? `/images/quiz/shape/${getImageFilename(option.value)}` : null;
+                    
                     return (
                       <button
                         type="button"
@@ -593,6 +617,14 @@ const Calculator = () => {
                         className={`quiz-option${isSelected ? ' is-selected' : ''}`}
                         onClick={() => handleOptionClick(option.value)}
                       >
+                        {imagePath && (
+                          <Image
+                            src={imagePath}
+                            alt={option.label}
+                            fill
+                            className="quiz-option__image"
+                          />
+                        )}
                         <span className="quiz-option__label">{option.label}</span>
                         {option.helper && <span className="quiz-helpers">{option.helper}</span>}
                       </button>
